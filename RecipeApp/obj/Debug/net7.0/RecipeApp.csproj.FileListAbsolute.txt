@@ -41,3 +41,46 @@ E:\my work\RecipeApp\RecipeApp\obj\Debug\net7.0\refint\RecipeApp.dll
 E:\my work\RecipeApp\RecipeApp\obj\Debug\net7.0\RecipeApp.pdb
 E:\my work\RecipeApp\RecipeApp\obj\Debug\net7.0\RecipeApp.genruntimeconfig.cache
 E:\my work\RecipeApp\RecipeApp\obj\Debug\net7.0\ref\RecipeApp.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\appsettings.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.exe
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.deps.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.runtimeconfig.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.pdb
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Humanizer.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.csproj.AssemblyReference.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.AssemblyInfoInputs.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.AssemblyInfo.cs
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.csproj.CoreCompileInputs.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets\msbuild.RecipeApp.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets\msbuild.build.RecipeApp.props
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.RecipeApp.props
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.RecipeApp.props
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\scopedcss\bundle\RecipeApp.styles.css
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.csproj.CopyComplete
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\refint\RecipeApp.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.pdb
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.genruntimeconfig.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\ref\RecipeApp.dll

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\my work\\RecipeApp\\RecipeAppBLL\\RecipeAppBLL.csproj": {}
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {}
   },
   "projects": {
-    "E:\\my work\\RecipeApp\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\my work\\RecipeApp\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
         "projectName": "RecipeAppBLL",
-        "projectPath": "E:\\my work\\RecipeApp\\RecipeAppBLL\\RecipeAppBLL.csproj",
-        "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-        "outputPath": "E:\\my work\\RecipeApp\\RecipeAppBLL\\obj\\",
+        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

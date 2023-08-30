@@ -22,4 +22,17 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Enable Cross-Origin Resource Sharing (CORS) to allow cross-origin requests.
+app.UseCors(options =>
+{
+    // Allow any header to be sent in requests.
+    options.AllowAnyHeader();
+
+    // Allow any HTTP method (GET, POST, PUT, DELETE, etc.).
+    options.AllowAnyMethod();
+
+    // Allow requests from any origin (domain) to access this API.
+    options.AllowAnyOrigin();
+});
+
 app.Run();

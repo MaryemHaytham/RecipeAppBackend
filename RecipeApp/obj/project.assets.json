@@ -1543,19 +1543,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ELZAHBIA\\.nuget\\packages\\": {}
+    "C:\\Users\\as\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\my work\\RecipeApp\\RecipeApp\\RecipeApp.csproj",
+      "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
       "projectName": "RecipeApp",
-      "projectPath": "E:\\my work\\RecipeApp\\RecipeApp\\RecipeApp.csproj",
-      "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-      "outputPath": "E:\\my work\\RecipeApp\\RecipeApp\\obj\\",
+      "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+      "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
