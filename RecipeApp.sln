@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAppBLL", "RecipeAppBL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecipeAppDAL", "RecipeAppDAL\RecipeAppDAL.csproj", "{ACEDAD77-0B32-47CA-8F3B-D6E1E09D37FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{C0EA67DA-06FB-494F-B265-BA0776CEA65F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{ACEDAD77-0B32-47CA-8F3B-D6E1E09D37FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACEDAD77-0B32-47CA-8F3B-D6E1E09D37FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACEDAD77-0B32-47CA-8F3B-D6E1E09D37FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0EA67DA-06FB-494F-B265-BA0776CEA65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0EA67DA-06FB-494F-B265-BA0776CEA65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0EA67DA-06FB-494F-B265-BA0776CEA65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0EA67DA-06FB-494F-B265-BA0776CEA65F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
