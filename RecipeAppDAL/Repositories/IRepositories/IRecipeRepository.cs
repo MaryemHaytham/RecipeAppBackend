@@ -11,8 +11,8 @@ namespace RecipeAppDAL.Repositories.IRepositories
     {
         Recipe GetById(int id);
         IEnumerable<Recipe> GetAll();
-        void Add(Recipe recipe);
-        void Update(Recipe recipe);
+        void AddRecipe(Recipe recipe);
+        void UpdateRecipe(Recipe recipe);
         void Delete(Recipe recipe);
     }
 }

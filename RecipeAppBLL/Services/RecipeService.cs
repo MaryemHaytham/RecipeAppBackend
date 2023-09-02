@@ -24,5 +24,24 @@ namespace RecipeAppBLL.Services
             searchStrategy = new SearchByName();
             return searchStrategy.Search(recipeName, _recipeRepository);
         }
+        public void AddRecipe(Recipe recipe)
+        {
+            if (recipe == null)
+            {
+                throw new ArgumentNullException(nameof(recipe));
+            }
+
+            _recipeRepository.AddRecipe(recipe);
+        }
+
+        public void UpdateRecipe(Recipe recipe)
+        {
+            if (recipe == null)
+            {
+                throw new ArgumentNullException(nameof(recipe));
+            }
+
+            _recipeRepository.UpdateRecipe(recipe);
+        }
     }
 }

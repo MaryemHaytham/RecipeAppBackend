@@ -31,16 +31,27 @@ namespace RecipeAppDAL.Repositories
         {
             return _recipeDbContext.Recipes.ToList();
         }
-        // Adds a new recipe.
-        public void Add(Recipe recipe)
+        public void AddRecipe(Recipe recipe)
         {
-           
+            if (recipe == null)
+            {
+                throw new ArgumentNullException(nameof(recipe));
+            }
+
+            _recipeDbContext.Recipes.Add(recipe);
+            _recipeDbContext.SaveChanges();
         }
 
         // Updates an existing recipe.
-        public void Update(Recipe recipe)
+        public void UpdateRecipe(Recipe recipe)
         {
-           
+            if (recipe == null)
+            {
+                throw new ArgumentNullException(nameof(recipe));
+            }
+
+            _recipeDbContext.Entry(recipe).State = EntityState.Modified;
+            _recipeDbContext.SaveChanges();
         }
 
         // Deletes a recipe by its unique identifier.
