@@ -30,5 +30,42 @@ namespace API.Controllers
             return Ok(matchingRecipes);
             
         }
+        [HttpPost]
+        public IActionResult AddRecipe([FromBody] Recipe recipe)
+        {
+            if (recipe == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                _recipeService.AddRecipe(recipe);
+                return CreatedAtAction(nameof(GetRecipesByRecipeName), new { recipeName = recipe.RecipeName }, recipe);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+
+        [HttpPut("UpdateRecipe/{recipeName}")]
+        public IActionResult UpdateRecipe(string recipeName, Recipe updatedRecipe)
+        {
+            if (recipeName != updatedRecipe.RecipeName)
+            {
+                return BadRequest("RecipeName in the URL does not match RecipeName in the request body.");
+            }
+
+            try
+            {
+                _recipeService.UpdateRecipe(updatedRecipe);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
     }
 }

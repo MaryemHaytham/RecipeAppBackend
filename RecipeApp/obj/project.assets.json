@@ -4090,19 +4090,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\as\\.nuget\\packages\\": {}
+    "C:\\Users\\ELZAHBIA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+      "projectUniqueName": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
       "projectName": "RecipeApp",
-      "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
-      "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\obj\\",
+      "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+      "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4116,11 +4116,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
-              "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj"
+            "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+              "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj"
             },
-            "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-              "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+            "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+              "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
             }
           }
         }
