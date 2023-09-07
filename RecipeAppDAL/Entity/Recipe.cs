@@ -8,6 +8,10 @@ namespace RecipeAppDAL.Entity
 {
     public class Recipe
     {
+        public Recipe()
+        {
+            CreatedOn = DateTime.Now;
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -23,11 +27,13 @@ namespace RecipeAppDAL.Entity
         [Required]
         [MinLength(4)] // Enforce minimum length of 1 character
         public string Steps { get; set; }
-      
-        public string? Image { get; set; }
+
+        public string ?Image { get; set; }
 
         public string? DietaryRestrictions { get; set; }
+        public DateTime CreatedOn { get; set; }
         public int Popularity { get; set; } = 0;
         public float Rating { get; set; } = 0;
+   
     }
 }

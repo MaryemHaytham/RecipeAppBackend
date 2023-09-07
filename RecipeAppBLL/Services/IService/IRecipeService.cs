@@ -1,4 +1,5 @@
-﻿using RecipeAppDAL.Entity;
+﻿using Microsoft.AspNetCore.Http;
+using RecipeAppDAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,21 @@ namespace RecipeAppBLL.Services.IService
     {
         public IEnumerable<Recipe> SearchByName(string recipeName);
         void AddRecipe(Recipe recipe);
+        public void uploadImage(IFormFile imageFile, int id);
+        Boolean DeleteRecipe(int id);
 
-        void UpdateRecipe(Recipe recipe);
+        Boolean UpdateRecipe(Recipe recipe,int recipeID);
+        object GetUniqueIngredients();
+        Recipe GetByID(int recipeID);
+        public IEnumerable<Recipe> GetAllRecipes();
     }
 }
+
+
+
+
+
+
+
+
+

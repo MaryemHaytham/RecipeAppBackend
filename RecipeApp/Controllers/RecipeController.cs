@@ -11,6 +11,9 @@ using RecipeAppDAL.Entity;
 using Microsoft.AspNetCore.Mvc;
 using RecipeAppBLL.Services;
 using RecipeAppBLL.Services.IService;
+using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
 
 namespace API.Controllers
 {
@@ -26,16 +29,59 @@ namespace API.Controllers
         [HttpGet("GetRecipesByName/{recipeName}")]
         public IActionResult GetRecipesByRecipeName(String recipeName)
         {
-            var matchingRecipes = _recipeService.SearchByName(recipeName);
-            return Ok(matchingRecipes);
-            
+            try
+            {
+                var matchingRecipes = _recipeService.SearchByName(recipeName);
+                return Ok(matchingRecipes);
+            }
+            catch (Exception ex)
+            { 
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+
         }
-        [HttpPost]
+        [HttpGet("GetRecipeByID/{id}")]
+        public IActionResult GetAllRecipes(int id)
+        {
+            try
+            {
+                var uniqueIngredients = _recipeService.GetByID(id);
+                if (uniqueIngredients == null)
+                {
+                    return StatusCode(404, "Recipe NOT Found");
+                }
+                return Ok(uniqueIngredients);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+
+        }
+
+        [HttpGet("GetAllRecipes")]
+        public IActionResult GetAllRecipes()
+        {
+            var uniqueIngredients = _recipeService.GetAllRecipes();
+            return Ok(uniqueIngredients);
+        }
+        [HttpPost("UploadImage/{id}")]
+        public IActionResult UploadImage(IFormFile imageFile,int id)
+        {
+             if (imageFile == null || imageFile.Length == 0)
+            {
+                return BadRequest("Recipe or image file is missing or empty.");
+            }
+            _recipeService.uploadImage(imageFile, id);
+            return Ok();
+        }
+
+        [HttpPost("add")]
         public IActionResult AddRecipe([FromBody] Recipe recipe)
         {
-            if (recipe == null)
+            if (recipe== null)
             {
-                return BadRequest();
+                return BadRequest("Recipe is empty.");
             }
 
             try
@@ -48,24 +94,38 @@ namespace API.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
-
-        [HttpPut("UpdateRecipe/{recipeName}")]
-        public IActionResult UpdateRecipe(string recipeName, Recipe updatedRecipe)
+        
+        [HttpPut("UpdateRecipe/{recipeID}")]
+        public IActionResult UpdateRecipe(int recipeID, [FromBody] Recipe updatedRecipe)
         {
-            if (recipeName != updatedRecipe.RecipeName)
-            {
-                return BadRequest("RecipeName in the URL does not match RecipeName in the request body.");
-            }
-
             try
             {
-                _recipeService.UpdateRecipe(updatedRecipe);
-                return NoContent();
+                
+                _recipeService.UpdateRecipe(updatedRecipe, recipeID);
+                return Ok(updatedRecipe);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
+        [HttpGet("DeleteRecipe/{id}")]
+        public IActionResult DeleteRecipe(int id)
+        {
+            try
+            {
+                if (_recipeService.DeleteRecipe(id)) return Ok("Successfully deleted");
+
+                return StatusCode(404, "Recipe with id " + id + " not found");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+
+        }
+
+
     }
 }

@@ -10,7 +10,8 @@ namespace RecipeAppDAL.Repositories.IRepositories
     public interface IRecipeRepository
     {
         Recipe GetById(int id);
-        IEnumerable<Recipe> GetAll();
+        IEnumerable<Recipe> GetRecipesByName(String recipeName);
+        IEnumerable<Recipe> GetAllRecipes();
         void AddRecipe(Recipe recipe);
         void UpdateRecipe(Recipe recipe);
         void Delete(Recipe recipe);

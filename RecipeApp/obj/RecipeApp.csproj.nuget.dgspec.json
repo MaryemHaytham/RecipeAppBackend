@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {}
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
         "projectName": "RecipeAppBLL",
-        "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
-        "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
+        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }
@@ -44,6 +44,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -69,17 +77,17 @@
         }
       }
     },
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "projectName": "RecipeAppDAL",
-        "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
-        "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
+        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -119,6 +127,12 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "System.Diagnostics.Tools": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -144,17 +158,17 @@
         }
       }
     },
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
         "projectName": "RecipeApp",
-        "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
-        "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeApp\\obj\\",
+        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,11 +182,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
-                "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj"
+              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj"
               },
-              "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }

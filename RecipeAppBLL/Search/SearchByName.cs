@@ -12,9 +12,9 @@ namespace RecipeAppBLL.Search
     internal class SearchByName : ISearch
     {
 
-        public IEnumerable<Recipe> Search(string recipeName, IRecipeFilteringRepository _recipeRepository)
+        public IEnumerable<Recipe> Search(string recipeName, IRecipeRepository _recipeRepository)
         {
-            IEnumerable<Recipe> matchingRecipes = _recipeRepository.GetRecipesByRecipeName(recipeName);
+            IEnumerable<Recipe> matchingRecipes = _recipeRepository.GetRecipesByName(recipeName);
             return matchingRecipes;
         }
     }
