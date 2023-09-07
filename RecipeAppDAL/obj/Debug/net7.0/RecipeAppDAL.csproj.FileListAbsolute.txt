@@ -26,3 +26,17 @@ C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\re
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.pdb
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.genruntimeconfig.cache
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\ref\RecipeAppDAL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.deps.json
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.runtimeconfig.json
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.pdb
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.csproj.AssemblyReference.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.AssemblyInfoInputs.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.AssemblyInfo.cs
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.csproj.CoreCompileInputs.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\refint\RecipeAppDAL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.pdb
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.genruntimeconfig.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\ref\RecipeAppDAL.dll
