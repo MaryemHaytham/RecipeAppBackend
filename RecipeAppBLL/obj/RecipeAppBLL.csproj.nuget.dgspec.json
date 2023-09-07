@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {}
+    "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+    "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "projectUniqueName": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
         "projectName": "RecipeAppBLL",
-        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
-        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
+        "projectPath": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }
@@ -77,17 +77,17 @@
         }
       }
     },
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+    "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectUniqueName": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "projectName": "RecipeAppDAL",
-        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
-        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
+        "projectPath": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Delta Tech\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -28,3 +28,18 @@ C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\Re
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\refint\RecipeAppBLL.dll
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.pdb
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\ref\RecipeAppBLL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\bin\Debug\net7.0\RecipeAppBLL.deps.json
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\bin\Debug\net7.0\RecipeAppBLL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\bin\Debug\net7.0\RecipeAppBLL.pdb
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\bin\Debug\net7.0\RecipeAppDAL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\bin\Debug\net7.0\RecipeAppDAL.pdb
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.csproj.AssemblyReference.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.AssemblyInfoInputs.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.AssemblyInfo.cs
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.csproj.CoreCompileInputs.cache
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.csproj.CopyComplete
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\refint\RecipeAppBLL.dll
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\RecipeAppBLL.pdb
+C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppBLL\obj\Debug\net7.0\ref\RecipeAppBLL.dll
