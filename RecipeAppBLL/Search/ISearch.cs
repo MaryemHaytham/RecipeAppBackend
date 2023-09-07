@@ -10,6 +10,6 @@ namespace RecipeAppBLL.Search
 {
     internal interface ISearch
     {
-        public IEnumerable<Recipe> Search(string searchCategory, IRecipeFilteringRepository _recipeRepository);
+        public IEnumerable<Recipe> Search(string searchCategory, IRecipeRepository _recipeRepository);
     }
 }

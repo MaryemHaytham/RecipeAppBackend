@@ -10,12 +10,9 @@ namespace RecipeAppDAL.Repositories.IRepositories
 {
     public interface IRecipeFilteringRepository
     {
-        IEnumerable<Recipe> GetRecipesByRecipeName(string recipeName);
-        IEnumerable<Recipe> GetRecipesByIngredients(string ingredients);
+        //IEnumerable<Recipe> GetRecipesByIngredients(string ingredients);
         IEnumerable<Recipe> GetRecipesByDietaryRestrictions(string dietaryRestrictions);
-        void AddRecipe(Recipe recipe);
-        Recipe GetById(int id);
-        void UpdateRecipe(Recipe recipe);
+        object getUniqueIngredients();
     }
 }
 

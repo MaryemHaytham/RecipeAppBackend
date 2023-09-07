@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {}
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "projectName": "RecipeAppDAL",
-        "projectPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
-        "packagesPath": "C:\\Users\\ELZAHBIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELZAHBIA\\Source\\Repos\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
+        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ELZAHBIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,6 +51,12 @@
               "version": "[7.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.10, )"
             },

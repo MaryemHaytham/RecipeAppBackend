@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Entity;
 using RecipeAppDAL.Repositories.IRepositories;
@@ -27,7 +28,7 @@ namespace RecipeAppDAL.Repositories
         }
 
         // Retrieves all recipes.
-        public IEnumerable<Recipe> GetAll()
+        public IEnumerable<Recipe> GetAllRecipes()
         {
             return _recipeDbContext.Recipes.ToList();
         }
@@ -45,11 +46,10 @@ namespace RecipeAppDAL.Repositories
         // Updates an existing recipe.
         public void UpdateRecipe(Recipe recipe)
         {
-            if (recipe == null)
-            {
-                throw new ArgumentNullException(nameof(recipe));
-            }
-
+            //_recipeDbContext.Entry(oldRecipe).State = EntityState.Detached;
+            //_recipeDbContext.Update(recipe);
+            //_recipeDbContext.Entry(recipe).State = EntityState.Modified;
+            //_recipeDbContext.Entry(recipe).State = EntityState.Modified;
             _recipeDbContext.Entry(recipe).State = EntityState.Modified;
             _recipeDbContext.SaveChanges();
         }
@@ -61,15 +61,9 @@ namespace RecipeAppDAL.Repositories
             _recipeDbContext.SaveChanges();
         }
         // Retrieves recipes by their name.
-        public IEnumerable<Recipe> GetRecipesByRecipeName(string recipeName)
+        public IEnumerable<Recipe> GetRecipesByName(string recipeName)
         {
             return _recipeDbContext.Recipes.Where(r => r.RecipeName.Contains(recipeName)).ToList();
-        }
-
-        // Retrieves recipes by their ingredients.
-        public IEnumerable<Recipe> GetRecipesByIngredients(string ingredients)
-        {
-            return _recipeDbContext.Recipes.Where(r => r.Ingredients.Contains(ingredients)).ToList();
         }
 
         // Retrieves recipes by their dietary restrictions.
@@ -77,5 +71,13 @@ namespace RecipeAppDAL.Repositories
         {
             return _recipeDbContext.Recipes.Where(r => r.DietaryRestrictions.Contains(dietaryRestrictions)).ToList();
         }
+
+
+        public object getUniqueIngredients()
+        {
+            throw new NotImplementedException();
+        }
+
+   
     }
 }
