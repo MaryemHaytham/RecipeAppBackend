@@ -1,85 +1,69 @@
-﻿using RecipeAppDAL.Repositories;
-using RecipeAppDAL.Repositories.IRepositories;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using RecipeAppDAL.Entity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using RecipeAppBLL.Services;
 using RecipeAppBLL.Services.IService;
-using Microsoft.EntityFrameworkCore;
-using static System.Net.Mime.MediaTypeNames;
-using System.Reflection;
-
+using RecipeAppDAL.Entity;
+using System;
 namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class RecipeController : ControllerBase
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IRecipeService _recipeService;
-        public RecipeController(IRecipeService recipeService)
+
+        public RecipeController(IRecipeService recipeService, IWebHostEnvironment webHostEnvironment)
         {
-                _recipeService = recipeService;
+            _recipeService = recipeService;
+            _webHostEnvironment = webHostEnvironment;
         }
+
         [HttpGet("GetRecipesByName/{recipeName}")]
-        public IActionResult GetRecipesByRecipeName(String recipeName)
+        public IActionResult GetRecipesByRecipeName(string recipeName)
         {
             try
             {
-                var matchingRecipes = _recipeService.SearchByName(recipeName);
-                return Ok(matchingRecipes);
+                return Ok(_recipeService.SearchByName(recipeName));
             }
             catch (Exception ex)
-            { 
+            {
                 return StatusCode(500, "An error occurred while processing your request.");
             }
-
         }
+
         [HttpGet("GetRecipeByID/{id}")]
-        public IActionResult GetAllRecipes(int id)
+        public IActionResult GetRecipeByID(int id) // Changed action name to match method name
         {
             try
             {
-                var uniqueIngredients = _recipeService.GetByID(id);
-                if (uniqueIngredients == null)
+                var recipe = _recipeService.GetByID(id);
+                if (recipe == null)
                 {
                     return StatusCode(404, "Recipe NOT Found");
                 }
-                return Ok(uniqueIngredients);
+                return Ok(recipe);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
-
         }
 
         [HttpGet("GetAllRecipes")]
         public IActionResult GetAllRecipes()
         {
-            var uniqueIngredients = _recipeService.GetAllRecipes();
-            return Ok(uniqueIngredients);
-        }
-        [HttpPost("UploadImage/{id}")]
-        public IActionResult UploadImage(IFormFile imageFile,int id)
-        {
-             if (imageFile == null || imageFile.Length == 0)
-            {
-                return BadRequest("Recipe or image file is missing or empty.");
-            }
-            _recipeService.uploadImage(imageFile, id);
-            return Ok();
+            var recipes = _recipeService.GetAllRecipes(); 
+            return Ok(recipes);
         }
 
-        [HttpPost("add")]
+        
+
+        [HttpPost("AddRecipe")]
         public IActionResult AddRecipe([FromBody] Recipe recipe)
         {
-            if (recipe== null)
+            if (recipe == null)
             {
                 return BadRequest("Recipe is empty.");
             }
@@ -94,13 +78,12 @@ namespace API.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
-        
+
         [HttpPut("UpdateRecipe/{recipeID}")]
         public IActionResult UpdateRecipe(int recipeID, [FromBody] Recipe updatedRecipe)
         {
             try
             {
-                
                 _recipeService.UpdateRecipe(updatedRecipe, recipeID);
                 return Ok(updatedRecipe);
             }
@@ -109,23 +92,34 @@ namespace API.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+        [HttpPost("UploadImage/{id}")]
+        public IActionResult UploadImage(IFormFile imageFile, int id)
+        {
+            if (imageFile == null || imageFile.Length == 0)
+            {
+                return BadRequest("Recipe or image file is missing or empty.");
+            }
+            string webRootPath = _webHostEnvironment.WebRootPath;
+            _recipeService.UploadImage(imageFile, id, webRootPath);
+            return Ok();
+        }
 
         [HttpGet("DeleteRecipe/{id}")]
         public IActionResult DeleteRecipe(int id)
         {
             try
             {
-                if (_recipeService.DeleteRecipe(id)) return Ok("Successfully deleted");
+                if (_recipeService.DeleteRecipe(id))
+                {
+                    return Ok("Successfully deleted");
+                }
 
-                return StatusCode(404, "Recipe with id " + id + " not found");
+                return StatusCode(404, $"Recipe with ID {id} not found");
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
-
         }
-
-
     }
 }
