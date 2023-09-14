@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "+06B5ybDt4ZwYu6hULL4X2T6ExPouuIYk1bfl1jdEHk=",
+  "Hash": "fk2LW5cBqG15Qlv4+4d4n953m1OUCHX/2dlyH96RoTM=",
   "Source": "RecipeApp",
   "BasePath": "_content/RecipeApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "RecipeApp\\wwwroot",
+      "Source": "RecipeApp",
+      "ContentRoot": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\",
+      "BasePath": "_content/RecipeApp",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
