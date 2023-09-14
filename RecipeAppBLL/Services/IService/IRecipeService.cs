@@ -13,9 +13,9 @@ namespace RecipeAppBLL.Services.IService
         public IEnumerable<Recipe> SearchByName(string recipeName);
         void AddRecipe(Recipe recipe);
         public void UploadImage(IFormFile imageFile, int id, String webRootPath);
-        bool DeleteRecipe(int id);
+        void DeleteRecipe(int id);
 
-        bool UpdateRecipe(Recipe recipe, int recipeID);
+        void UpdateRecipe(Recipe recipe, int recipeID);
         object GetUniqueIngredients();
         Recipe GetByID(int recipeID);
         public IEnumerable<Recipe> GetAllRecipes();
