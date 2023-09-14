@@ -27,6 +27,8 @@ builder.Services.AddSwaggerGen();
 // Configure logging
 builder.Logging.AddConsole();
 
+builder.Services.AddTransient<ErrorHandlingMiddleware>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -55,7 +57,9 @@ app.UseCors(options =>
     options.AllowAnyOrigin();
 });
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
 // Serve static files from the wwwroot directory
 app.UseStaticFiles();
+
 
 app.Run();

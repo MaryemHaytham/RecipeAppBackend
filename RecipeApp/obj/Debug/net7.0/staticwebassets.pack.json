@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg",
+      "PackagePath": "staticwebassets\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RecipeApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.RecipeApp.props",
+      "PackagePath": "build\\RecipeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.RecipeApp.props",
+      "PackagePath": "buildMultiTargeting\\RecipeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.RecipeApp.props",
+      "PackagePath": "buildTransitive\\RecipeApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

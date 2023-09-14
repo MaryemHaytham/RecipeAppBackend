@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fk2LW5cBqG15Qlv4+4d4n953m1OUCHX/2dlyH96RoTM=",
+  "Hash": "0RTOfCF9F/y/w+SnLGP8nFFMys+LFstym4OJ7dHDmzs=",
   "Source": "RecipeApp",
   "BasePath": "_content/RecipeApp",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg",
+      "SourceId": "RecipeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\",
+      "BasePath": "_content/RecipeApp",
+      "RelativePath": "images/209c80be-1820-483d-8698-8c4143d407be_1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg"
+    }
+  ]
 }

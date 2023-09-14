@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using RecipeAppBLL.CustomExceptions;
 using RecipeAppBLL.Search;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.Entity;
@@ -36,25 +37,22 @@ namespace RecipeAppBLL.Services
         {
             if (recipe == null)
             {
-                throw new ArgumentNullException(nameof(recipe));
+                throw new ArgumentNullException(nameof(recipe), "Recipe is empty.");
             }
 
             _recipeRepository.AddRecipe(recipe);
         }
 
-        public bool UpdateRecipe(Recipe recipe, int recipeID) 
+        public void UpdateRecipe(Recipe recipe, int recipeID) 
         {
             if (recipe == null)
             {
-                throw new ArgumentNullException(nameof(recipe));
+                throw new ArgumentNullException(nameof(recipe), "Recipe is empty.");
             }
-            Recipe oldRecipe = _recipeRepository.GetById(recipeID);
-            if (oldRecipe == null)
-            {
-                return false;
-            }
+            Recipe oldRecipe = GetByID(recipeID);
+            
             _recipeRepository.UpdateRecipe(recipe);
-            return true;
+           
         }
 
         public object GetUniqueIngredients()
@@ -64,7 +62,14 @@ namespace RecipeAppBLL.Services
 
         public Recipe GetByID(int recipeID)
         {
-            return _recipeRepository.GetById(recipeID);
+            var recipe = _recipeRepository.GetById(recipeID);
+
+            if (recipe == null)
+            {
+                throw new RecipeNotFoundException();
+            }
+
+            return recipe;
         }
 
         public IEnumerable<Recipe> GetAllRecipes()
@@ -72,26 +77,16 @@ namespace RecipeAppBLL.Services
             return _recipeRepository.GetAllRecipes();
         }
 
-        public bool DeleteRecipe(int id) 
+        public void DeleteRecipe(int id) 
         {
-            Recipe recipe = _recipeRepository.GetById(id);
-            if (recipe == null)
-            {
-                return false;
-            }
+            Recipe recipe = GetByID(id);
             _recipeRepository.Delete(recipe);
-            return true;
         }
 
 
         public void DeleteImage(int id, string webRootPath)
         {
-            Recipe recipe = _recipeRepository.GetById(id);
-            if (recipe == null)
-            {
-                return; 
-            }
-
+            Recipe recipe = GetByID(id);
             string oldImagePath = recipe.Image;
             if (!string.IsNullOrEmpty(oldImagePath))
             {
@@ -111,15 +106,21 @@ namespace RecipeAppBLL.Services
         }
         public void UploadImage(IFormFile imageFile, int id, string webRootPath) 
         {
-            DeleteImage(id, webRootPath);   
+            var contentType = imageFile.ContentType;
+            var allowedImageTypes = new[] { "image/jpg","image/jpeg", "image/png", "image/gif" };
+            if (!allowedImageTypes.Contains(contentType))
+            {
+                throw new InvalidImageTypeException();
+            }
+            Recipe recipe =GetByID(id);
+            DeleteImage(id, webRootPath);   // Delete old image
             if (imageFile != null && imageFile.Length > 0)
             {
-                string imageFolderPath = Path.Combine(webRootPath, "images"); // Combine with "images" folder
+                string imageFolderPath = Path.Combine(webRootPath, "images"); 
 
-                // Generate a unique filename for the image, e.g., using a GUID
+                // Generate a unique filename for the image using a GUID
                 string uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
 
-                // Combine the unique filename with the path to the image folder
                 string imagePath = Path.Combine(imageFolderPath, uniqueFileName);
 
                 // Save the image file to the specified path
@@ -128,10 +129,7 @@ namespace RecipeAppBLL.Services
                     imageFile.CopyTo(fileStream);
                 }
 
-                Recipe recipe = _recipeRepository.GetById(id);
-
-                // Store the relative image path in the Recipe entity
-                recipe.Image = "images/" + uniqueFileName; // Store the relative file path as the URL
+                recipe.Image = "images/" + uniqueFileName; 
                 UpdateRecipe(recipe, recipe.Id);
             }
         }
