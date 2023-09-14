@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "+06B5ybDt4ZwYu6hULL4X2T6ExPouuIYk1bfl1jdEHk=",
+  "Hash": "7ahiNWODgHWNNW3Xy+jFoIQtxt5EzJc8aJtS2hUIa1M=",
   "Source": "RecipeApp",
   "BasePath": "_content/RecipeApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "RecipeApp\\wwwroot",
+      "Source": "RecipeApp",
+      "ContentRoot": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\",
+      "BasePath": "_content/RecipeApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png",
+      "SourceId": "RecipeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\",
+      "BasePath": "_content/RecipeApp",
+      "RelativePath": "images/e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png"
+    },
+    {
+      "Identity": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png",
+      "SourceId": "RecipeApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\",
+      "BasePath": "_content/RecipeApp",
+      "RelativePath": "images/f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png"
+    }
+  ]
 }

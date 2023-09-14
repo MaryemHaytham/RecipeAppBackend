@@ -12,13 +12,14 @@ namespace RecipeAppBLL.Services.IService
     {
         public IEnumerable<Recipe> SearchByName(string recipeName);
         void AddRecipe(Recipe recipe);
-        public void uploadImage(IFormFile imageFile, int id);
-        Boolean DeleteRecipe(int id);
+        public void UploadImage(IFormFile imageFile, int id,String webRootPath);
+        bool DeleteRecipe(int id);
 
-        Boolean UpdateRecipe(Recipe recipe,int recipeID);
+        bool UpdateRecipe(Recipe recipe,int recipeID);
         object GetUniqueIngredients();
         Recipe GetByID(int recipeID);
         public IEnumerable<Recipe> GetAllRecipes();
+        public void DeleteImage(int id, string webRootPath);
     }
 }
 

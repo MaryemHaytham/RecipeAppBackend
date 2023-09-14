@@ -205,3 +205,4 @@ C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\refin
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.pdb
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\RecipeApp.genruntimeconfig.cache
 C:\Users\ELZAHBIA\Source\Repos\RecipeAppBackend\RecipeApp\obj\Debug\net7.0\ref\RecipeApp.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeApp\bin\Debug\net7.0\RecipeApp.staticwebassets.runtime.json

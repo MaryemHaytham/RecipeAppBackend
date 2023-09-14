@@ -23,7 +23,7 @@ namespace RecipeAppDAL.Entity
         [Required]
         [MinLength(1)] // Enforce minimum length of 1 character
         public string Ingredients { get; set; }
-
+          
         [Required]
         [MinLength(4)] // Enforce minimum length of 1 character
         public string Steps { get; set; }

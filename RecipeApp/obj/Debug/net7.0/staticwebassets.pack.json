@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png",
+      "PackagePath": "staticwebassets\\images\\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png",
+      "PackagePath": "staticwebassets\\images\\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RecipeApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.RecipeApp.props",
+      "PackagePath": "build\\RecipeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.RecipeApp.props",
+      "PackagePath": "buildMultiTargeting\\RecipeApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.RecipeApp.props",
+      "PackagePath": "buildTransitive\\RecipeApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

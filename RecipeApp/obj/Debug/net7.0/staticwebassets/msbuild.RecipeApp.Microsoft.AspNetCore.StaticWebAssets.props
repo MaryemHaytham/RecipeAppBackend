@@ -1,0 +1,36 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>RecipeApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RecipeApp</BasePath>
+      <RelativePath>images/e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\e7d98431-f056-4a83-90b2-d342557e1811_imgbin_web-application-ui-icon-interface-icon-language-icon-png.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>RecipeApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/RecipeApp</BasePath>
+      <RelativePath>images/f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f009c160-2c9c-4c00-ab77-6118c1e8fd46_trophy.png))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>
