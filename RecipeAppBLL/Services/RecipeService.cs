@@ -29,7 +29,7 @@ namespace RecipeAppBLL.Services
 
         public IEnumerable<Recipe> SearchByName(string recipeName)
         {
-            _searchStrategy = new SearchByName(); // Use camelCase for local variables
+            _searchStrategy = new SearchByName();
             return _searchStrategy.Search(recipeName, _recipeRepository);
         }
 
@@ -40,7 +40,7 @@ namespace RecipeAppBLL.Services
                 throw new ArgumentNullException(nameof(recipe), "Recipe is empty.");
             }
 
-            _recipeRepository.AddRecipe(recipe);
+            _recipeRepository.Add(recipe);
         }
 
         public void UpdateRecipe(Recipe recipe, int recipeID) 
@@ -51,7 +51,7 @@ namespace RecipeAppBLL.Services
             }
             Recipe oldRecipe = GetByID(recipeID);
             
-            _recipeRepository.UpdateRecipe(recipe);
+            _recipeRepository.Update(recipe);
            
         }
 
@@ -74,7 +74,7 @@ namespace RecipeAppBLL.Services
 
         public IEnumerable<Recipe> GetAllRecipes()
         {
-            return _recipeRepository.GetAllRecipes();
+            return _recipeRepository.GetAll();
         }
 
         public void DeleteRecipe(int id) 
@@ -133,7 +133,14 @@ namespace RecipeAppBLL.Services
                 UpdateRecipe(recipe, recipe.Id);
             }
         }
+
+        public IEnumerable<Recipe> SortByRating()
+        {
+            return _recipeRepository.SortByRating();
+        }
     }
+
+
 
 
 }

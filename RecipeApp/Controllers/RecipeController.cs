@@ -67,5 +67,10 @@ namespace API.Controllers
             return Ok("Successfully deleted");
             
         }
+
+        [HttpGet("SortByRating")]
+        public IActionResult SortByRating() {
+            return Ok(_recipeService.SortByRating());
+        }
     }
 }

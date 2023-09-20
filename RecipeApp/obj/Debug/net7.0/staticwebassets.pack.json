@@ -1,8 +1,44 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg",
-      "PackagePath": "staticwebassets\\images\\209c80be-1820-483d-8698-8c4143d407be_1.jpg"
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\1a669e71-aa3f-409a-bb6f-65a8f7a17ca9_spaghettiandmeatballs.jpg",
+      "PackagePath": "staticwebassets\\images\\1a669e71-aa3f-409a-bb6f-65a8f7a17ca9_spaghettiandmeatballs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\25a875bf-a0ef-4c61-89f9-aa04b82217ab_chickentikka.jpg",
+      "PackagePath": "staticwebassets\\images\\25a875bf-a0ef-4c61-89f9-aa04b82217ab_chickentikka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\4ca4fbab-48ee-4c39-aba9-e84e2943dbfe_chickentikka.jpg",
+      "PackagePath": "staticwebassets\\images\\4ca4fbab-48ee-4c39-aba9-e84e2943dbfe_chickentikka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\591c5586-2801-48f5-9125-2858ced17d21_1.jpg",
+      "PackagePath": "staticwebassets\\images\\591c5586-2801-48f5-9125-2858ced17d21_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\973ea5b6-9d3e-4336-bbdd-13de4a3bbb6b_chickencurry.jpg",
+      "PackagePath": "staticwebassets\\images\\973ea5b6-9d3e-4336-bbdd-13de4a3bbb6b_chickencurry.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\9f540e56-71cd-4b42-9712-e67b7117e749_sausagepasta.jpg",
+      "PackagePath": "staticwebassets\\images\\9f540e56-71cd-4b42-9712-e67b7117e749_sausagepasta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\bfa271ac-b53b-4c3c-ad6e-868981311a2e_corrisantsandwich.jpg",
+      "PackagePath": "staticwebassets\\images\\bfa271ac-b53b-4c3c-ad6e-868981311a2e_corrisantsandwich.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\cb79295d-e75d-4d04-a799-9ab5efb364bc_sausagepasta.jpg",
+      "PackagePath": "staticwebassets\\images\\cb79295d-e75d-4d04-a799-9ab5efb364bc_sausagepasta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\df6925ef-e2a4-4f9a-ad08-47ea79189ea8_creamychickenpastajpg.jpg",
+      "PackagePath": "staticwebassets\\images\\df6925ef-e2a4-4f9a-ad08-47ea79189ea8_creamychickenpastajpg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\wwwroot\\images\\e05614ae-a08d-4e99-b87d-baeffe32aace_creamychickenpastajpg.jpg",
+      "PackagePath": "staticwebassets\\images\\e05614ae-a08d-4e99-b87d-baeffe32aace_creamychickenpastajpg.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RecipeApp.Microsoft.AspNetCore.StaticWebAssets.props",

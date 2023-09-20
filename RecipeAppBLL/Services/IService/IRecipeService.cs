@@ -20,5 +20,6 @@ namespace RecipeAppBLL.Services.IService
         Recipe GetByID(int recipeID);
         public IEnumerable<Recipe> GetAllRecipes();
         public void DeleteImage(int id, string webRootPath);
+        public IEnumerable<Recipe> SortByRating();
     }
 }
