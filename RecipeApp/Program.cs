@@ -15,8 +15,8 @@ builder.Services.AddDbContext<RecipeDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
-builder.Services.AddScoped<IRecipeFilteringRepository, RecipeRepository>();
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
+//builder.Services.AddScoped<IGenericRepository, GenericRepository>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddControllers();
 
