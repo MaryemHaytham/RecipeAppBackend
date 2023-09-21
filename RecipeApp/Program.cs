@@ -18,6 +18,8 @@ builder.Services.AddDbContext<RecipeDbContext>(options =>
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 //builder.Services.AddScoped<IGenericRepository, GenericRepository>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
