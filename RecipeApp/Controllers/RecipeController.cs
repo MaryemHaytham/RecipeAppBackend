@@ -64,7 +64,7 @@ namespace API.Controllers
         public IActionResult DeleteRecipe(int id)
         {
             _recipeService.DeleteRecipe(id);
-            return Ok("Successfully deleted");
+            return Ok(new { message ="Successfully deleted" });
             
         }
 

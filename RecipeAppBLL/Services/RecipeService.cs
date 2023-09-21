@@ -50,8 +50,12 @@ namespace RecipeAppBLL.Services
                 throw new ArgumentNullException(nameof(recipe), "Recipe is empty.");
             }
             Recipe oldRecipe = GetByID(recipeID);
-            
-            _recipeRepository.Update(recipe);
+
+            oldRecipe.RecipeName = recipe.RecipeName;
+            oldRecipe.Ingredients = recipe.Ingredients;
+            oldRecipe.Steps = recipe.Steps;
+            oldRecipe.DietaryRestrictions = recipe.DietaryRestrictions;
+            _recipeRepository.Update(oldRecipe);
            
         }
 
