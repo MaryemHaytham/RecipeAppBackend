@@ -20,6 +20,7 @@ namespace RecipeAppDAL.DataContext
 
         //recipes table that will be created in db
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
 

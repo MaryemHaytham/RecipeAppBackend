@@ -34,6 +34,8 @@ namespace RecipeAppDAL.Entity
         public DateTime CreatedOn { get; set; }
         public int Popularity { get; set; } = 0;
         public float Rating { get; set; } = 0;
-   
+        public int UserId { get; set; } // Foreign key
+        public User User { get; set; } // Navigation property
+
     }
 }
