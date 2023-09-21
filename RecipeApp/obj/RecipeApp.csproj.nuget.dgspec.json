@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {}
+    "E:\\my work\\test\\RecipeApp\\RecipeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+    "E:\\my work\\test\\RecipeAppBLL\\RecipeAppBLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "projectUniqueName": "E:\\my work\\test\\RecipeAppBLL\\RecipeAppBLL.csproj",
         "projectName": "RecipeAppBLL",
-        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj",
-        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\obj\\",
+        "projectPath": "E:\\my work\\test\\RecipeAppBLL\\RecipeAppBLL.csproj",
+        "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
+        "outputPath": "E:\\my work\\test\\RecipeAppBLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }
@@ -44,6 +44,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
@@ -73,21 +81,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+    "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectUniqueName": "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "projectName": "RecipeAppDAL",
-        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj",
-        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\obj\\",
+        "projectPath": "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
+        "outputPath": "E:\\my work\\test\\RecipeAppDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,21 +162,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj": {
+    "E:\\my work\\test\\RecipeApp\\RecipeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
+        "projectUniqueName": "E:\\my work\\test\\RecipeApp\\RecipeApp.csproj",
         "projectName": "RecipeApp",
-        "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\RecipeApp.csproj",
-        "packagesPath": "C:\\Users\\as\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeApp\\obj\\",
+        "projectPath": "E:\\my work\\test\\RecipeApp\\RecipeApp.csproj",
+        "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
+        "outputPath": "E:\\my work\\test\\RecipeApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\as\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,11 +190,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj": {
-                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppBLL\\RecipeAppBLL.csproj"
+              "E:\\my work\\test\\RecipeAppBLL\\RecipeAppBLL.csproj": {
+                "projectPath": "E:\\my work\\test\\RecipeAppBLL\\RecipeAppBLL.csproj"
               },
-              "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "C:\\Users\\as\\Documents\\GitHub\\RecipeAppBackend\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "E:\\my work\\test\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }
@@ -204,6 +212,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -245,7 +257,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

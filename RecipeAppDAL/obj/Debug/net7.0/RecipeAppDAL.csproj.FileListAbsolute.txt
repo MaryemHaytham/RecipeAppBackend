@@ -40,3 +40,17 @@ C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\
 C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.pdb
 C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.genruntimeconfig.cache
 C:\Users\Delta Tech\Source\Repos\RecipeAppBackend\RecipeAppDAL\obj\Debug\net7.0\ref\RecipeAppDAL.dll
+E:\my work\test\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.deps.json
+E:\my work\test\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.runtimeconfig.json
+E:\my work\test\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.dll
+E:\my work\test\RecipeAppDAL\bin\Debug\net7.0\RecipeAppDAL.pdb
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.csproj.AssemblyReference.cache
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.AssemblyInfoInputs.cache
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.AssemblyInfo.cs
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.csproj.CoreCompileInputs.cache
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.dll
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\refint\RecipeAppDAL.dll
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.pdb
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\RecipeAppDAL.genruntimeconfig.cache
+E:\my work\test\RecipeAppDAL\obj\Debug\net7.0\ref\RecipeAppDAL.dll

@@ -7,6 +7,9 @@ using RecipeAppBLL.Services;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDAL.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +21,24 @@ builder.Services.AddDbContext<RecipeDbContext>(options =>
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 //builder.Services.AddScoped<IGenericRepository, GenericRepository>();
 builder.Services.AddScoped<IRecipeService, RecipeService>();
+builder.Services.AddAuthentication(options => {
+    options.DefaultAuthenticateScheme= JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateActor = true,
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        RequireAudience = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration.GetSection("Jwt:Issuer").Value,
+        ValidAudience = builder.Configuration.GetSection("Jwt:Audience").Value,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("Jwt:Key").Value))
+    };
+});
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -40,6 +61,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
