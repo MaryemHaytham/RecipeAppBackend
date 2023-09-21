@@ -5,6 +5,9 @@ using RecipeAppBLL.Services;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.Entity;
 using System;
+using RecipeApp.ViewModels;
+using RecipeAppDAL.Migrations;
+
 namespace API.Controllers
 {
     [ApiController]
@@ -40,10 +43,21 @@ namespace API.Controllers
         }
 
         [HttpPost("AddRecipe")]
-        public IActionResult AddRecipe([FromBody] Recipe recipe)
+        public IActionResult AddRecipe([FromBody] AddRecipeVM addrecipe)
         {
-            _recipeService.AddRecipe(recipe);
-            return CreatedAtAction(nameof(GetRecipesByRecipeName), new { recipeName = recipe.RecipeName }, recipe);   
+
+            var newrecipe = new Recipe 
+            { 
+                RecipeName = addrecipe.RecipeName,
+                Ingredients = addrecipe.Ingredients,
+                Steps = addrecipe.Steps,
+                Image = addrecipe.Image,
+                UserId = addrecipe.UserId,
+            
+            };
+            
+            _recipeService.AddRecipe(newrecipe);
+            return Ok(newrecipe);   
         }
 
         [HttpPut("UpdateRecipe/{recipeID}")]
