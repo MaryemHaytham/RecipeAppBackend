@@ -21,7 +21,7 @@ namespace RecipeApp.Controllers
         {
             if (user == null)
             {
-                return BadRequest("Invalid registration data.");
+                return BadRequest();
             }
             var Newuser = new User
             {
@@ -38,11 +38,11 @@ namespace RecipeApp.Controllers
 
             if (registrationResult)
             {
-                return Ok("Registration successful.");
+                return Ok();
             }
             else
             {
-                return BadRequest("Registration failed. Email may already be in use.");
+                return BadRequest();
             }
         }
     }
