@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using RecipeAppBLL.CustomExceptions;
+using RecipeAppBLL.Utilities.CustomExceptions;
 
 public class ErrorHandlingMiddleware : IMiddleware
 {
@@ -33,21 +33,12 @@ public class ErrorHandlingMiddleware : IMiddleware
         int statusCode;
         string errorMessage;
 
-        if (exception is RecipeNotFoundException)
+        if (exception is CustomException)
         {
             statusCode = (int)HttpStatusCode.NotFound;
             errorMessage = exception.Message;
         }
-        else if (exception is EmptyImageException)
-        {
-            statusCode = (int)HttpStatusCode.NotFound;
-            errorMessage = exception.Message;
-        }
-        else if (exception is InvalidImageTypeException)
-        {
-            statusCode = (int)HttpStatusCode.BadRequest;
-            errorMessage = exception.Message;
-        }
+    
         else
         {
             _logger.LogError(exception, exception.Message);

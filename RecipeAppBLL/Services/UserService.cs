@@ -46,12 +46,12 @@ namespace RecipeAppBLL.Services
             }
 
             user.Password = HashPassword(newPassword);
-            _userRepository.UpdateUser(user);
+            _userRepository.Update(user);
             return true;
         }
         public bool UpdateProfile(int userId, User updatedUser)
         {
-            var existingUser = _userRepository.GetUserById(userId);
+            var existingUser = _userRepository.GetById(userId);
 
             if (existingUser == null)
             {
@@ -63,7 +63,7 @@ namespace RecipeAppBLL.Services
             existingUser.LastName = updatedUser.LastName;
             existingUser.Email = updatedUser.Email;
 
-            _userRepository.UpdateUser(existingUser);
+            _userRepository.Update(existingUser);
             return true;
         }
 
@@ -110,6 +110,11 @@ namespace RecipeAppBLL.Services
                 byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return Convert.ToBase64String(hashedBytes);
             }
+        }
+
+        public User GetUser(int userId)
+        {
+            return _userRepository.GetById(userId);
         }
     }
 }

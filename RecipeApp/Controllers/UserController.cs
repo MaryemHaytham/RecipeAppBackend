@@ -45,9 +45,14 @@ namespace RecipeApp.Controllers
                 return BadRequest();
             }
         }
+        //[HttpPost("login")]
+        [HttpGet("GetUser/{id}")]
+        public IActionResult GetUser(int id)
+        {
+            return Ok(_userService.GetUser(id));
+        }
     }
-    //[HttpPost("login")]
-
+    
 
 
 }

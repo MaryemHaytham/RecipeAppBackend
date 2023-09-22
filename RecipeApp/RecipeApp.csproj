@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RecipeAppBLL\RecipeAppBLL.csproj" />
     <ProjectReference Include="..\RecipeAppDAL\RecipeAppDAL.csproj" />
+    <ProjectReference Include="..\RecipeAppDTO\RecipeAppDTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>

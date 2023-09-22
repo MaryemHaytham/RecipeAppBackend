@@ -31,5 +31,25 @@ namespace RecipeAppDAL.Repositories
         {
             return _recipeDbContext.Recipes.OrderByDescending(recipe => recipe.Rating).ToList();
         }
+
+        public void AddIngredients(string ingredients)
+        {
+            // Split the input string into individual ingredients using commas as a delimiter
+            var ingredientNames = ingredients.Split(',').Select(i => i.Trim()).Distinct();
+
+            foreach (var ingredientName in ingredientNames)
+            {
+                // Check if the ingredient already exists in the database
+                var existingIngredient = _recipeDbContext.Ingredients.SingleOrDefault(i => i.Name == ingredientName);
+
+                if (existingIngredient == null)
+                {
+                    // If it doesn't exist, add it to the database
+                    var newIngredient = new Ingredients { Name = ingredientName };
+                    _recipeDbContext.Ingredients.Add(newIngredient);
+                }
+            }
+            _recipeDbContext.SaveChanges();
+        }
     }
 }

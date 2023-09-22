@@ -7,6 +7,7 @@ using RecipeAppBLL.Services;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDAL.Repositories;
+using RecipeAppBLL.Utilities.AutoMaper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ builder.Services.AddSwaggerGen();
 
 // Configure logging
 builder.Logging.AddConsole();
+
+//Auto Mapper
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddTransient<ErrorHandlingMiddleware>();
 

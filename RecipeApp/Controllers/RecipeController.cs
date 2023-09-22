@@ -7,6 +7,7 @@ using RecipeAppDAL.Entity;
 using System;
 using RecipeApp.ViewModels;
 using RecipeAppDAL.Migrations;
+using RecipeAppDTO.RecipeDTO;
 
 namespace API.Controllers
 {
@@ -32,7 +33,7 @@ namespace API.Controllers
         [HttpGet("GetRecipeByID/{id}")]
         public IActionResult GetRecipeByID(int id) 
         {
-            return Ok(_recipeService.GetByID(id));
+            return Ok(_recipeService.GetByIdDTO(id));
         }
 
         [HttpGet("GetAllRecipes")]
@@ -43,25 +44,15 @@ namespace API.Controllers
         }
 
         [HttpPost("AddRecipe")]
-        public IActionResult AddRecipe([FromBody] AddRecipeVM addrecipe)
+        public IActionResult AddRecipe([FromBody] AddRecipeDTO addRecipe)
         {
 
-            var newrecipe = new Recipe 
-            { 
-                RecipeName = addrecipe.RecipeName,
-                Ingredients = addrecipe.Ingredients,
-                Steps = addrecipe.Steps,
-                Image = addrecipe.Image,
-                UserId = addrecipe.UserId,
-            
-            };
-            
-            _recipeService.AddRecipe(newrecipe);
-            return Ok(newrecipe);   
+            Recipe newRecipe=_recipeService.AddRecipe(addRecipe);
+            return Ok(newRecipe);   
         }
 
         [HttpPut("UpdateRecipe/{recipeID}")]
-        public IActionResult UpdateRecipe(int recipeID, [FromBody] Recipe updatedRecipe)
+        public IActionResult UpdateRecipe(int recipeID, [FromBody] EditRecipeDTO updatedRecipe)
         {
             _recipeService.UpdateRecipe(updatedRecipe, recipeID);
             return Ok(updatedRecipe);
