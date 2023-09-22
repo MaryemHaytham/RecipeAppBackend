@@ -12,7 +12,8 @@ namespace RecipeAppBLL.Services.IService
     public interface IRecipeService
     {
         public IEnumerable<RecipeToReturnDTO> SearchByName(string recipeName);
-        Recipe AddRecipe(AddRecipeDTO recipeDTO);
+        public RecipeToReturnDTO getRecipeToReturnDTO(Recipe recipe);
+        public RecipeToReturnDTO AddRecipe(AddRecipeDTO recipeDTO);
         public void UploadImage(IFormFile imageFile, int id, String webRootPath);
         void DeleteRecipe(int id);
 
@@ -23,5 +24,7 @@ namespace RecipeAppBLL.Services.IService
         public IEnumerable<RecipeToReturnDTO> GetAllRecipes();
         public void DeleteImage(int id, string webRootPath);
         public IEnumerable<RecipeToReturnDTO> SortByRating();
+        IEnumerable<string> GetAllIngredients();
+        IEnumerable<RecipeToReturnDTO> GetRecipesByIngredient(IEnumerable<string> ingredients);
     }
 }

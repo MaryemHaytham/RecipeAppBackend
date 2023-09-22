@@ -33,9 +33,7 @@ namespace RecipeAppBLL.Services
             _userRepository = userRepository;
         }
 
-
-
-        public Recipe AddRecipe(AddRecipeDTO recipeDTO)
+        public RecipeToReturnDTO AddRecipe(AddRecipeDTO recipeDTO)
         {
             if (recipeDTO == null)
             {
@@ -49,7 +47,7 @@ namespace RecipeAppBLL.Services
 
             _recipeRepository.Add(recipe);
             _recipeRepository.AddIngredients(recipe.Ingredients);
-            return recipe;
+            return getRecipeToReturnDTO(recipe);
         }
         public void UpdateRecipe(EditRecipeDTO recipeDTO, int recipeID)
         {
@@ -83,6 +81,10 @@ namespace RecipeAppBLL.Services
 
             return recipe;
         }
+        public RecipeToReturnDTO getRecipeToReturnDTO(Recipe recipe)
+        {
+            return _mapper.Map<RecipeToReturnDTO>(recipe);
+        }
 
         public RecipeToReturnDTO GetByIdDTO(int recipeID)
         {
@@ -90,11 +92,7 @@ namespace RecipeAppBLL.Services
             return _mapper.Map<RecipeToReturnDTO>(recipe);
         }
 
-        public IEnumerable<RecipeToReturnDTO> GetAllRecipes()
-        {
-            var recipes = _recipeRepository.GetAll();
-            return _mapper.Map<IEnumerable<RecipeToReturnDTO>>(recipes);
-        }
+
         public IEnumerable<RecipeToReturnDTO> SortByRating()
         {
             var recipes = _recipeRepository.SortByRating();
@@ -166,7 +164,22 @@ namespace RecipeAppBLL.Services
 
         }
 
-        
+        public IEnumerable<string> GetAllIngredients()
+        {
+            return _recipeRepository.GetAllIngredients();
+        }
+
+        public IEnumerable<RecipeToReturnDTO> GetAllRecipes()
+        {
+            var recipes = _recipeRepository.GetAll();
+            return _mapper.Map<IEnumerable<RecipeToReturnDTO>>(recipes);
+        }
+
+        public IEnumerable<RecipeToReturnDTO> GetRecipesByIngredient(IEnumerable<string> ingredients)
+        {
+            var matchingRecipes = _recipeRepository.GetRecipesByIngredient(ingredients);
+            return _mapper.Map<IEnumerable<RecipeToReturnDTO>>(matchingRecipes);
+        }
     }
 }
         

@@ -12,7 +12,7 @@ namespace RecipeAppDTO.RecipeDTO
         public string Ingredients { get; set;}
         public string Steps { get; set;}
         public string? DietaryRestrictions { get; set; }
-        public string Categories {  get; set; }
+        //public string Categories {  get; set; }
         public int UserId { get; set; }
 
     }
