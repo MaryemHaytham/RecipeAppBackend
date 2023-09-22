@@ -51,5 +51,29 @@ namespace RecipeAppDAL.Repositories
             }
             _recipeDbContext.SaveChanges();
         }
+
+        public IEnumerable<string> GetAllIngredients()
+        {
+            var ingredientNames = _recipeDbContext.Ingredients.Select(i => i.Name).ToList();
+            return ingredientNames;
+        }
+
+        public IEnumerable<Recipe> GetRecipesByIngredient(IEnumerable<string> ingredients)
+        {
+            var matchingRecipes = _recipeDbContext.Recipes.ToList();
+
+            foreach (var ingredient in ingredients)
+            {
+                matchingRecipes = matchingRecipes
+                    .Where(recipe => recipe.Ingredients.Contains(ingredient))
+                    .ToList();
+            }
+
+            return matchingRecipes;
+        }
+
+
+
+
     }
 }

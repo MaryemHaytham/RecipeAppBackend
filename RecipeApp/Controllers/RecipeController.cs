@@ -47,7 +47,7 @@ namespace API.Controllers
         public IActionResult AddRecipe([FromBody] AddRecipeDTO addRecipe)
         {
 
-            Recipe newRecipe=_recipeService.AddRecipe(addRecipe);
+            RecipeToReturnDTO newRecipe=_recipeService.AddRecipe(addRecipe);
             return Ok(newRecipe);   
         }
 
@@ -77,5 +77,17 @@ namespace API.Controllers
         public IActionResult SortByRating() {
             return Ok(_recipeService.SortByRating());
         }
+
+        [HttpGet("GetIngredients")]
+        public IActionResult GetIngredients()
+        {
+            return Ok(_recipeService.GetAllIngredients());
+        }
+        [HttpGet("GetRecipesByIngredients")]
+        public IActionResult GetRecipesByIngredients([FromQuery] IEnumerable<string> ingredients)
+        {
+            return Ok(_recipeService.GetRecipesByIngredient(ingredients));
+        }
+
     }
 }

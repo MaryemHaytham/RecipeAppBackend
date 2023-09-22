@@ -16,6 +16,8 @@ namespace RecipeAppDAL.Repositories.IRepositories
         //object getUniqueIngredients();
         IEnumerable<Recipe> SortByRating();
         void AddIngredients(string ingredients);
+        IEnumerable<string> GetAllIngredients();
+        IEnumerable<Recipe> GetRecipesByIngredient(IEnumerable<string> ingredients);
     }
 }
 
