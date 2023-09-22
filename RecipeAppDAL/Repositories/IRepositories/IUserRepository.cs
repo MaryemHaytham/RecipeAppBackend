@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace RecipeAppDAL.Repositories.IRepositories
 {
-    public interface IUserRepository
+    public interface IUserRepository : IGenericRepository<User>
     {
-        User GetUserById(int userId);
         User GetUserByEmail(string email);
-        void Add(User user);
-        void UpdateUser(User user);
-        IEnumerable<User> GetAll();
     }
 }

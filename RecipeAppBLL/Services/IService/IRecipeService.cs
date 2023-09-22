@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using RecipeAppDAL.Entity;
+using RecipeAppDTO.RecipeDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,17 @@ namespace RecipeAppBLL.Services.IService
 {
     public interface IRecipeService
     {
-        public IEnumerable<Recipe> SearchByName(string recipeName);
-        void AddRecipe(Recipe recipe);
+        public IEnumerable<RecipeToReturnDTO> SearchByName(string recipeName);
+        Recipe AddRecipe(AddRecipeDTO recipeDTO);
         public void UploadImage(IFormFile imageFile, int id, String webRootPath);
         void DeleteRecipe(int id);
 
-        void UpdateRecipe(Recipe recipe, int recipeID);
+        void UpdateRecipe(EditRecipeDTO recipe, int recipeID);
         object GetUniqueIngredients();
-        Recipe GetByID(int recipeID);
-        public IEnumerable<Recipe> GetAllRecipes();
+        public RecipeToReturnDTO GetByIdDTO(int recipeID);
+        public Recipe GetByID(int recipeID);
+        public IEnumerable<RecipeToReturnDTO> GetAllRecipes();
         public void DeleteImage(int id, string webRootPath);
-        public IEnumerable<Recipe> SortByRating();
+        public IEnumerable<RecipeToReturnDTO> SortByRating();
     }
 }

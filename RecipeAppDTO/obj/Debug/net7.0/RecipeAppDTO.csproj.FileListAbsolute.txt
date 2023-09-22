@@ -1,0 +1,11 @@
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\bin\Debug\net7.0\RecipeAppDTO.deps.json
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\bin\Debug\net7.0\RecipeAppDTO.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\bin\Debug\net7.0\RecipeAppDTO.pdb
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.AssemblyInfoInputs.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.AssemblyInfo.cs
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.csproj.CoreCompileInputs.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\refint\RecipeAppDTO.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.pdb
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\ref\RecipeAppDTO.dll

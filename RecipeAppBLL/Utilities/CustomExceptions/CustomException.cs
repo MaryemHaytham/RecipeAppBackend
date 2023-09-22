@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecipeAppBLL.CustomExceptions
+namespace RecipeAppBLL.Utilities.CustomExceptions
 {
-    public class EmptyImageException : Exception
+    public class CustomException : Exception
     {
-        public EmptyImageException(string message)
+        public CustomException(string message)
             : base(message)
         {
         }

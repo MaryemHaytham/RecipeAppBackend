@@ -22,6 +22,17 @@ namespace RecipeAppDAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.Ingredients", b =>
+                {
+                    b.Property<string>("Name")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Ingredients");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.Recipe", b =>
                 {
                     b.Property<int>("Id")
@@ -70,7 +81,7 @@ namespace RecipeAppDAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2023, 9, 21, 17, 7, 4, 122, DateTimeKind.Local).AddTicks(9904),
+                            CreatedOn = new DateTime(2023, 9, 21, 22, 37, 58, 995, DateTimeKind.Local).AddTicks(5288),
                             Ingredients = "i1,i2,i3",
                             Popularity = 0,
                             Rating = 0f,
