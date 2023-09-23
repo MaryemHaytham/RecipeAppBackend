@@ -14,6 +14,8 @@ namespace RecipeAppDTO.RecipeDTO
         public string? DietaryRestrictions { get; set; }
         //public string Categories {  get; set; }
         public int UserId { get; set; }
+        public string CategoryName {  get; set; }
+
 
     }
 }

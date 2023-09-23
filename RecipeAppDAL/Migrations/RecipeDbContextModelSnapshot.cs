@@ -22,6 +22,23 @@ namespace RecipeAppDAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.Categories", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.Ingredients", b =>
                 {
                     b.Property<string>("Name")
@@ -40,6 +57,9 @@ namespace RecipeAppDAL.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -73,22 +93,11 @@ namespace RecipeAppDAL.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Recipes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedOn = new DateTime(2023, 9, 21, 22, 37, 58, 995, DateTimeKind.Local).AddTicks(5288),
-                            Ingredients = "i1,i2,i3",
-                            Popularity = 0,
-                            Rating = 0f,
-                            RecipeName = "Test",
-                            Steps = "s1,s2,s3,s4",
-                            UserId = 0
-                        });
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>
@@ -122,6 +131,12 @@ namespace RecipeAppDAL.Migrations
 
             modelBuilder.Entity("RecipeAppDAL.Entity.Recipe", b =>
                 {
+                    b.HasOne("RecipeAppDAL.Entity.Categories", "category")
+                        .WithMany("Recipes")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RecipeAppDAL.Entity.User", "User")
                         .WithMany("Recipes")
                         .HasForeignKey("UserId")
@@ -129,6 +144,13 @@ namespace RecipeAppDAL.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+
+                    b.Navigation("category");
+                });
+
+            modelBuilder.Entity("RecipeAppDAL.Entity.Categories", b =>
+                {
+                    b.Navigation("Recipes");
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>

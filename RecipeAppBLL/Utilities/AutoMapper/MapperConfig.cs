@@ -15,7 +15,7 @@ namespace RecipeAppBLL.Utilities.AutoMaper
         {
             CreateMap<Recipe, AddRecipeDTO>().ReverseMap();
             CreateMap<Recipe, EditRecipeDTO>().ReverseMap();
-            CreateMap<RecipeToReturnDTO, Recipe>().ReverseMap();
+            CreateMap<RecipeDTO, Recipe>().ReverseMap();
         }
     }
 }

@@ -11,20 +11,23 @@ namespace RecipeAppBLL.Services.IService
 {
     public interface IRecipeService
     {
-        public IEnumerable<RecipeToReturnDTO> SearchByName(string recipeName);
-        public RecipeToReturnDTO getRecipeToReturnDTO(Recipe recipe);
-        public RecipeToReturnDTO AddRecipe(AddRecipeDTO recipeDTO);
+        public IEnumerable<RecipeDTO> SearchByName(string recipeName);
+        public RecipeDTO getRecipeToReturnDTO(Recipe recipe);
+        public RecipeDTO AddRecipe(AddRecipeDTO recipeDTO);
         public void UploadImage(IFormFile imageFile, int id, String webRootPath);
         void DeleteRecipe(int id);
 
         void UpdateRecipe(EditRecipeDTO recipe, int recipeID);
         object GetUniqueIngredients();
-        public RecipeToReturnDTO GetByIdDTO(int recipeID);
+        public RecipeDTO GetByIdDTO(int recipeID);
         public Recipe GetByID(int recipeID);
-        public IEnumerable<RecipeToReturnDTO> GetAllRecipes();
+        public IEnumerable<RecipeDTO> GetAllRecipes();
         public void DeleteImage(int id, string webRootPath);
-        public IEnumerable<RecipeToReturnDTO> SortByRating();
+        public IEnumerable<RecipeDTO> SortByRating(List<RecipeDTO> recipes);
         IEnumerable<string> GetAllIngredients();
-        IEnumerable<RecipeToReturnDTO> GetRecipesByIngredient(IEnumerable<string> ingredients);
+        IEnumerable<RecipeDTO> GetRecipesByIngredient(IEnumerable<string> ingredients);
+        public IEnumerable<Categories> AddCategory(string categoryName);
+        public IEnumerable<Categories> GetCategories();
+        public IEnumerable<RecipeDTO> GetRecipesByCategory(int categoryID);
     }
 }

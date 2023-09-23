@@ -9,3 +9,7 @@ C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\Reci
 C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\refint\RecipeAppDTO.dll
 C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.pdb
 C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\ref\RecipeAppDTO.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\bin\Debug\net7.0\RecipeAppDAL.dll
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\bin\Debug\net7.0\RecipeAppDAL.pdb
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.csproj.AssemblyReference.cache
+C:\Users\as\Documents\GitHub\RecipeAppBackend\RecipeAppDTO\obj\Debug\net7.0\RecipeAppDTO.csproj.CopyComplete

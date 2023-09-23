@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
@@ -36,6 +37,10 @@ namespace RecipeAppDAL.Entity
         public float Rating { get; set; } = 0;
         public int UserId { get; set; } // Foreign key
         public User User { get; set; } // Navigation property
+        public int CategoryId { get; set; } //Category foriegn key
+        public Categories category { get; set; }
+
+
 
     }
 }
