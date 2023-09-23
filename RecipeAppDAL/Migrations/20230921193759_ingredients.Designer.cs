@@ -11,7 +11,7 @@ using RecipeAppDAL.DataContext;
 
 namespace RecipeAppDAL.Migrations
 {
-    [DbContext(typeof(RecipeDbContext))]
+    [DbContext(typeof(DataContext.RecipeDbContext))]
     [Migration("20230921193759_ingredients")]
     partial class ingredients
     {

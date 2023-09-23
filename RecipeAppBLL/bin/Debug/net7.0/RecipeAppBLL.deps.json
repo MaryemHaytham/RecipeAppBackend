@@ -731,6 +731,9 @@
         }
       },
       "RecipeAppDTO/1.0.0": {
+        "dependencies": {
+          "RecipeAppDAL": "1.0.0"
+        },
         "runtime": {
           "RecipeAppDTO.dll": {}
         }

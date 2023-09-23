@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Entity;
+using RecipeAppDAL.Migrations;
 using RecipeAppDAL.Repositories.IRepositories;
 
 namespace RecipeAppDAL.Repositories
 {
     public class RecipeRepository : GenericRepository<Recipe>, IRecipeRepository
     {
-        private readonly RecipeDbContext _recipeDbContext;
-        public RecipeRepository(RecipeDbContext recipeDbContext) : base(recipeDbContext)
+        private readonly DataContext.RecipeDbContext _recipeDbContext;
+        public RecipeRepository(DataContext.RecipeDbContext recipeDbContext) : base(recipeDbContext)
         {
             _recipeDbContext = recipeDbContext;
         }
@@ -72,8 +73,13 @@ namespace RecipeAppDAL.Repositories
             return matchingRecipes;
         }
 
+        public IEnumerable<Recipe> getRecipesByCategoryID(int categoryID)
+        {
+            var matchingRecipes = _recipeDbContext.Recipes
+            .Where(r => r.CategoryId == categoryID)
+            .ToList();
 
-
-
+            return matchingRecipes;
+        }
     }
 }

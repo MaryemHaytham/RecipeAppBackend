@@ -14,9 +14,9 @@ namespace RecipeAppDAL.Repositories
     public class GenericRepository<T> : IGenericRepository<T>
          where T : class
     {
-        private readonly RecipeDbContext _recipeDbContext;
+        private readonly DataContext.RecipeDbContext _recipeDbContext;
        
-        public GenericRepository(RecipeDbContext recipeDbContext)
+        public GenericRepository(DataContext.RecipeDbContext recipeDbContext)
         {
             _recipeDbContext = recipeDbContext;
         } 

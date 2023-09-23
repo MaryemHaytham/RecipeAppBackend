@@ -9,9 +9,9 @@ using System.Linq;
 
 public class UserRepository : GenericRepository<User>, IUserRepository
 {
-    private readonly RecipeDbContext _recipeDbContext;
+    private readonly RecipeAppDAL.DataContext.RecipeDbContext _recipeDbContext;
 
-    public UserRepository(RecipeDbContext recipeDbContext) : base(recipeDbContext)
+    public UserRepository(RecipeAppDAL.DataContext.RecipeDbContext recipeDbContext) : base(recipeDbContext)
     {
         _recipeDbContext = recipeDbContext;
     }

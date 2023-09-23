@@ -31,7 +31,7 @@ namespace API.Controllers
         }
 
         [HttpGet("GetRecipeByID/{id}")]
-        public IActionResult GetRecipeByID(int id) 
+        public IActionResult GetRecipeByID(int id)
         {
             return Ok(_recipeService.GetByIdDTO(id));
         }
@@ -39,7 +39,7 @@ namespace API.Controllers
         [HttpGet("GetAllRecipes")]
         public IActionResult GetAllRecipes()
         {
-            var recipes = _recipeService.GetAllRecipes(); 
+            var recipes = _recipeService.GetAllRecipes();
             return Ok(recipes);
         }
 
@@ -47,8 +47,8 @@ namespace API.Controllers
         public IActionResult AddRecipe([FromBody] AddRecipeDTO addRecipe)
         {
 
-            RecipeToReturnDTO newRecipe=_recipeService.AddRecipe(addRecipe);
-            return Ok(newRecipe);   
+            RecipeDTO newRecipe = _recipeService.AddRecipe(addRecipe);
+            return Ok(newRecipe);
         }
 
         [HttpPut("UpdateRecipe/{recipeID}")]
@@ -69,13 +69,14 @@ namespace API.Controllers
         public IActionResult DeleteRecipe(int id)
         {
             _recipeService.DeleteRecipe(id);
-            return Ok("Successfully deleted");
-            
+            return Ok(new { message = "Recipe was successfully deleted." });
+
         }
 
-        [HttpGet("SortByRating")]
-        public IActionResult SortByRating() {
-            return Ok(_recipeService.SortByRating());
+        [HttpPost("SortByRating")]
+        public IActionResult SortByRating([FromBody] List<RecipeDTO> recipes)
+        {
+            return Ok(_recipeService.SortByRating(recipes));
         }
 
         [HttpGet("GetIngredients")]
@@ -88,6 +89,23 @@ namespace API.Controllers
         {
             return Ok(_recipeService.GetRecipesByIngredient(ingredients));
         }
+        [HttpPost("AddCategory")]
+        public IActionResult AddCategory(string categoryName)
+        {
+            return Ok(_recipeService.AddCategory(categoryName));
+        }
+        [HttpGet("GetCategory")]
+        public IActionResult GetCategories()
+        {
+            return Ok(_recipeService.GetCategories());
+
+        }
+        [HttpGet("GetRecipesByCategory/{categoryID}")]
+        public IActionResult GetRecipesByCategory(int categoryID)
+        {
+            return Ok(_recipeService.GetRecipesByCategory(categoryID));
+
+        }
 
     }
-}
+    }

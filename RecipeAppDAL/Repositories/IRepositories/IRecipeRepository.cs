@@ -18,6 +18,7 @@ namespace RecipeAppDAL.Repositories.IRepositories
         void AddIngredients(string ingredients);
         IEnumerable<string> GetAllIngredients();
         IEnumerable<Recipe> GetRecipesByIngredient(IEnumerable<string> ingredients);
+        IEnumerable<Recipe> getRecipesByCategoryID(int categoryID);
     }
 }
 
