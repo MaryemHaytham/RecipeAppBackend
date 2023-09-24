@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RecipeApp.ViewModels;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.Entity;
-using RecipeAppDAL.Repositories.IRepositories;
 
 namespace RecipeApp.Controllers
 {
@@ -12,15 +10,10 @@ namespace RecipeApp.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly IUserRepository _userRepository;
-        private readonly IJwtService _iJwtService;
 
-        public UserController(IUserService userService, IUserRepository userRepository, IJwtService ijwtService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _userRepository = userRepository;
-            _iJwtService = ijwtService;
-
         }
 
         [HttpPost("register")]
@@ -52,41 +45,14 @@ namespace RecipeApp.Controllers
                 return BadRequest();
             }
         }
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginUserVM request)
-        {
-            var user = _userRepository.GetUserByEmail(request.Email);
-
-            if (user == null || user.Password != request.Password)
-            {
-                return Unauthorized("Invalid email or password");
-            }
-
-            var token = _iJwtService.GenerateToken(user);
-
-            return Ok(new { Token = token });
-        }
-        //[Authorize] //to secure the endpoint
-        //[HttpGet("secure-endpoint")]
-        //public IActionResult SecureEndpoint()
-        //{
-
-        //    return Ok("This is a secure endpoint.");
-        //}
-
+        //[HttpPost("login")]
         [HttpGet("GetUser/{id}")]
         public IActionResult GetUser(int id)
         {
             return Ok(_userService.GetUser(id));
         }
-
-
-
-
-
-
     }
-
+    
 
 
 }
