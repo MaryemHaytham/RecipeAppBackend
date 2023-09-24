@@ -8,6 +8,9 @@ using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDAL.Repositories;
 using RecipeAppBLL.Utilities.AutoMaper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +25,24 @@ builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICategoriesRepository,CategoriesRepository>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddControllers();
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+       .AddJwtBearer(options =>
+       {
+           options.TokenValidationParameters = new TokenValidationParameters
+           {
+               ValidateIssuer = true,
+               ValidateAudience = true,
+               ValidateLifetime = true,
+               ValidateIssuerSigningKey = true,
+               ValidIssuer = "https://localhost:7288",
+               ValidAudience = "https://localhost:7288",
+               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Token:Key"))
+           };
+       });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -46,6 +66,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6GlRCgwWToxiIZ8dZn6f09Qak3YQVIQfzkj3E/INxZi3g+V1R8FgyWsqlvJJkJAeuNzo/afO2VHjlgWzppp0HQ==",
+  "dgSpecHash": "Ckic0lyNxZtrxlsMpSIpEWS1f7g+nsZ1fDYkkHDnN35cmdy3CGsBeSQStvpdmIpEjhKvhK5/5Zh9viTvWmwLMw==",
   "success": true,
-  "projectFilePath": "E:\\my work\\finalreposignin\\RecipeAppDTO\\RecipeAppDTO.csproj",
+  "projectFilePath": "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Delta Tech\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Delta Tech\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

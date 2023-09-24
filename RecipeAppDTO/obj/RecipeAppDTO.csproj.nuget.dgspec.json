@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\my work\\finalreposignin\\RecipeAppDTO\\RecipeAppDTO.csproj": {}
+    "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj": {}
   },
   "projects": {
-    "E:\\my work\\finalreposignin\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+    "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\my work\\finalreposignin\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectUniqueName": "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "projectName": "RecipeAppDAL",
-        "projectPath": "E:\\my work\\finalreposignin\\RecipeAppDAL\\RecipeAppDAL.csproj",
+        "projectPath": "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj",
         "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
-        "outputPath": "E:\\my work\\finalreposignin\\RecipeAppDAL\\obj\\",
+        "outputPath": "E:\\my work\\git\\RecipeAppDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,14 +85,14 @@
         }
       }
     },
-    "E:\\my work\\finalreposignin\\RecipeAppDTO\\RecipeAppDTO.csproj": {
+    "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\my work\\finalreposignin\\RecipeAppDTO\\RecipeAppDTO.csproj",
+        "projectUniqueName": "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj",
         "projectName": "RecipeAppDTO",
-        "projectPath": "E:\\my work\\finalreposignin\\RecipeAppDTO\\RecipeAppDTO.csproj",
+        "projectPath": "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj",
         "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
-        "outputPath": "E:\\my work\\finalreposignin\\RecipeAppDTO\\obj\\",
+        "outputPath": "E:\\my work\\git\\RecipeAppDTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -109,8 +109,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\my work\\finalreposignin\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-                "projectPath": "E:\\my work\\finalreposignin\\RecipeAppDAL\\RecipeAppDAL.csproj"
+              "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+                "projectPath": "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj"
               }
             }
           }
