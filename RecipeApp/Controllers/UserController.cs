@@ -58,9 +58,17 @@ namespace RecipeApp.Controllers
         {
             var user = _userRepository.GetUserByEmail(request.Email);
 
-            if (user == null || user.Password != request.Password)
+            if (user == null)
             {
-                return Unauthorized("Invalid email or password");
+                return BadRequest("User not found");
+            }
+
+            // Hash the password entered during login
+            string hashedPassword = _userService.HashPassword(request.Password);
+
+            if (user.Password != hashedPassword)
+            {
+                return BadRequest("Invalid Password");
             }
 
             var token = _iJwtService.GenerateToken(user);
@@ -71,7 +79,7 @@ namespace RecipeApp.Controllers
         //[HttpGet("secure-endpoint")]
         //public IActionResult SecureEndpoint()
         //{
-            
+
         //    return Ok("This is a secure endpoint.");
         //}
         [HttpGet("GetUser/{id}")]

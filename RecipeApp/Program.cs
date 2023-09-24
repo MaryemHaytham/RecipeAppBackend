@@ -25,6 +25,7 @@ builder.Services.AddScoped<IRecipeService, RecipeService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ICategoriesRepository,CategoriesRepository>();
+
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddControllers();
 

@@ -14,5 +14,6 @@ namespace RecipeAppBLL.Services.IService
         bool UpdateProfile(int userId, User updatedUser);
         bool RegisterUser(User user);
         User GetUser(int userId);
+        string HashPassword(string password);
     }
 }
