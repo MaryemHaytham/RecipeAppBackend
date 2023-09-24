@@ -31,6 +31,7 @@ namespace RecipeAppBLL.Services
                 Subject = new ClaimsIdentity(new[]
                 {
                 new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.GivenName, user.FirstName),
                 new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
             }),
                 Expires = DateTime.UtcNow.AddHours(1), // Set your desired expiration time
