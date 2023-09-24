@@ -3274,11 +3274,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj",
+      "projectUniqueName": "E:\\my work\\review\\RecipeAppDTO\\RecipeAppDTO.csproj",
       "projectName": "RecipeAppDTO",
-      "projectPath": "E:\\my work\\git\\RecipeAppDTO\\RecipeAppDTO.csproj",
+      "projectPath": "E:\\my work\\review\\RecipeAppDTO\\RecipeAppDTO.csproj",
       "packagesPath": "C:\\Users\\Delta Tech\\.nuget\\packages\\",
-      "outputPath": "E:\\my work\\git\\RecipeAppDTO\\obj\\",
+      "outputPath": "E:\\my work\\review\\RecipeAppDTO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Delta Tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3295,8 +3295,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj": {
-              "projectPath": "E:\\my work\\git\\RecipeAppDAL\\RecipeAppDAL.csproj"
+            "E:\\my work\\review\\RecipeAppDAL\\RecipeAppDAL.csproj": {
+              "projectPath": "E:\\my work\\review\\RecipeAppDAL\\RecipeAppDAL.csproj"
             }
           }
         }

@@ -39,6 +39,8 @@ namespace RecipeAppDAL.Entity
         public User User { get; set; } // Navigation property
         public int CategoryId { get; set; } //Category foriegn key
         public Categories category { get; set; }
+        //public int ReviewId { get; set; }// Foreign key
+        public List<Review> Reviews { get; set; }// Navigation property
 
 
 

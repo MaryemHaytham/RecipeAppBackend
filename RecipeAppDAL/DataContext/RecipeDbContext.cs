@@ -21,7 +21,17 @@ namespace RecipeAppDAL.DataContext
         public DbSet<User> Users { get; set; }
         public DbSet<Ingredients> Ingredients { get; set; }
         public DbSet<Categories> Categories { get; set; }
-        
+        public DbSet<Review> Reviews { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Review>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+        }
+
 
     }
 }
