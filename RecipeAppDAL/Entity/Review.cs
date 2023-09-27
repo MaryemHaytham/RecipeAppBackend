@@ -18,8 +18,8 @@ namespace RecipeAppDAL.Entity
         [MinLength(1)]
         public string Text { get; set; }
 
-        [Range(1, 5)] // Assuming a rating scale from 1 to 5
-        public int Rating { get; set; }
+        //[Range(1, 5)] // Assuming a rating scale from 1 to 5
+        //public int Rating { get; set; }
 
         public int UserId { get; set; } // Foreign key to User
         public User User { get; set; } // Navigation property to User

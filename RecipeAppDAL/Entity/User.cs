@@ -15,7 +15,11 @@ namespace RecipeAppDAL.Entity
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public List<RecipeFavorite> FavoriteRecipes { get; set; }
         public List<Recipe> Recipes { get; set; } // Navigation property
-        public List<Review> Reviews { get; set; }
+        public List<Review> Reviews { get; set; }// Navigation property
+        public List<Rating> Ratings { get; set; }// Navigation property
+
+
     }
 }
