@@ -38,5 +38,11 @@ namespace RecipeApp.Controllers
 
             return BadRequest("Failed to remove recipe from favorites.");
         }
+        [HttpGet("favorites/{userId}")]
+        public async Task<IActionResult> GetFavoriteRecipes(int userId)
+        {
+            var favoriteRecipes = await _favoriteService.GetFavoriteRecipesAsync(userId);
+            return Ok(favoriteRecipes);
+        }
     }
 }

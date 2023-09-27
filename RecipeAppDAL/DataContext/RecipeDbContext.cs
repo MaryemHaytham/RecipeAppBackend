@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using RecipeAppDAL.Entity;
+using RecipeAppDAL.Migrations;
 using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
@@ -49,6 +50,13 @@ namespace RecipeAppDAL.DataContext
                 .HasOne(rf => rf.Recipe)
                 .WithMany(r => r.FavoritedByUsers)
                 .HasForeignKey(rf => rf.RecipeId);
+            modelBuilder.Entity<RecipeFavorite>()
+                .HasOne(f => f.User)
+                .WithMany(u => u.FavoriteRecipes)
+                .HasForeignKey(f => f.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
         }
 
 

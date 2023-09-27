@@ -1,4 +1,5 @@
-﻿using RecipeAppDTO.FavoritesDTO;
+﻿using RecipeAppDAL.Entity;
+using RecipeAppDTO.FavoritesDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace RecipeAppBLL.Services.IService
     {
         Task<bool> AddRecipeToFavoritesAsync(AddToFavoriteDto addToFavoriteDto);
         Task<bool> RemoveRecipeFromFavoritesAsync(RemoveFromFavoriteDto removeFromFavoriteDto);
+        Task<List<Recipe>> GetFavoriteRecipesAsync(int userId);
     }
 }
