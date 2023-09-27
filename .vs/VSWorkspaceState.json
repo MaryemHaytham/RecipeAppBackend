@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\RecipeAppBLL",
+    "\\RecipeAppBLL\\Services",
+    "\\RecipeAppDAL",
+    "\\RecipeAppDAL\\Entity"
+  ],
+  "SelectedNode": "\\RecipeAppBLL\\Services\\RatingService.cs",
+  "PreviewInSolutionExplorer": false
+}

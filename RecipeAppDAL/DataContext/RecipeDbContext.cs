@@ -22,14 +22,33 @@ namespace RecipeAppDAL.DataContext
         public DbSet<Ingredients> Ingredients { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Review> Reviews { get; set; }
-
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<RecipeFavorite> Favorites { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Review>()
                 .HasOne(r => r.User)
-                .WithMany()
+                .WithMany(u => u.Reviews)
                 .HasForeignKey(r => r.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.NoAction); // Set OnDelete to NoAction
+
+            modelBuilder.Entity<Rating>()
+                .HasOne(r => r.User)
+                .WithMany(u => u.Ratings)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.NoAction); // Set OnDelete to Cascade for the other relationship
+            modelBuilder.Entity<RecipeFavorite>()
+                .HasKey(rf => new { rf.UserId, rf.RecipeId });
+
+            modelBuilder.Entity<RecipeFavorite>()
+                .HasOne(rf => rf.User)
+                .WithMany(u => u.FavoriteRecipes)
+                .HasForeignKey(rf => rf.UserId);
+
+            modelBuilder.Entity<RecipeFavorite>()
+                .HasOne(rf => rf.Recipe)
+                .WithMany(r => r.FavoritedByUsers)
+                .HasForeignKey(rf => rf.RecipeId);
         }
 
 

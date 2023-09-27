@@ -50,6 +50,35 @@ namespace RecipeAppDAL.Migrations
                     b.ToTable("Ingredients");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"));
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Ratings");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.Recipe", b =>
                 {
                     b.Property<int>("Id")
@@ -114,9 +143,6 @@ namespace RecipeAppDAL.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
@@ -127,16 +153,11 @@ namespace RecipeAppDAL.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
-
                     b.HasKey("ReviewId");
 
                     b.HasIndex("RecipeId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("Reviews");
                 });
@@ -170,6 +191,25 @@ namespace RecipeAppDAL.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.Rating", b =>
+                {
+                    b.HasOne("RecipeAppDAL.Entity.Recipe", "Recipe")
+                        .WithMany("Ratings")
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RecipeAppDAL.Entity.User", "User")
+                        .WithMany("Ratings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.Recipe", b =>
                 {
                     b.HasOne("RecipeAppDAL.Entity.Categories", "category")
@@ -198,14 +238,10 @@ namespace RecipeAppDAL.Migrations
                         .IsRequired();
 
                     b.HasOne("RecipeAppDAL.Entity.User", "User")
-                        .WithMany()
+                        .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
-
-                    b.HasOne("RecipeAppDAL.Entity.User", null)
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId1");
 
                     b.Navigation("Recipe");
 
@@ -219,11 +255,15 @@ namespace RecipeAppDAL.Migrations
 
             modelBuilder.Entity("RecipeAppDAL.Entity.Recipe", b =>
                 {
+                    b.Navigation("Ratings");
+
                     b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>
                 {
+                    b.Navigation("Ratings");
+
                     b.Navigation("Recipes");
 
                     b.Navigation("Reviews");
