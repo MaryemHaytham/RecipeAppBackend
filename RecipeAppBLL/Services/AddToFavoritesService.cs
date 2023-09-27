@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RecipeAppBLL.Services.IService;
 using RecipeAppBLL.Utilities.CustomExceptions;
@@ -17,11 +18,13 @@ namespace RecipeAppBLL.Services
     {
         private readonly RecipeDbContext _context;
         private readonly ILogger<AddToFavoritesService> _logger;
+        private readonly IMapper _mapper;
 
-        public AddToFavoritesService(RecipeDbContext context, ILogger<AddToFavoritesService> logger)
+        public AddToFavoritesService(RecipeDbContext context, ILogger<AddToFavoritesService> logger, IMapper mapper)
         {
             _context = context;
             _logger = logger;
+            _mapper = mapper;
         }
         public async Task<bool> AddRecipeToFavoritesAsync(AddToFavoriteDto addToFavoriteDto)
         {
@@ -109,6 +112,21 @@ namespace RecipeAppBLL.Services
                 return false;
             }
 
+        }
+        public async Task<List<Recipe>> GetFavoriteRecipesAsync(int userId)
+        {
+            // Query the database to retrieve the user's favorite recipes
+            var favoriteRecipeIds = await _context.Favorites
+                .Where(f => f.UserId == userId)
+                .Select(f => f.RecipeId)
+                .ToListAsync();
+
+            // Use the retrieved recipe IDs to fetch the actual Recipe entities
+            var favoriteRecipes = await _context.Recipes
+                .Where(r => favoriteRecipeIds.Contains(r.Id))
+                .ToListAsync();
+
+            return favoriteRecipes;
         }
     }
 }

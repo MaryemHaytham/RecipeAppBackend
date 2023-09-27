@@ -28,6 +28,7 @@ builder.Services.AddScoped<ICategoriesRepository,CategoriesRepository>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IAddToFavoritesService, AddToFavoritesService>();
 builder.Services.AddControllers();
 
 
