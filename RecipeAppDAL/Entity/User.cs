@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace RecipeAppDAL.Entity
         public List<Recipe> Recipes { get; set; } // Navigation property
         public List<Review> Reviews { get; set; }// Navigation property
         public List<Rating> Ratings { get; set; }// Navigation property
+        public List<MealPlan> MealPlans { get; set; }
 
 
     }

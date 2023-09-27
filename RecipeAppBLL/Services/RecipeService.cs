@@ -193,7 +193,13 @@ namespace RecipeAppBLL.Services
         public IEnumerable<RecipeDTO> GetAllRecipes()
         {
             var recipes = _recipeRepository.GetAll();
+            return  _mapper.Map<IEnumerable<RecipeDTO>>(recipes);
+        }
+        public IEnumerable<RecipeDTO> GetUserRecipes(int id)
+        {
+            var recipes = _recipeRepository.GetUserRecipes(id);
             return _mapper.Map<IEnumerable<RecipeDTO>>(recipes);
+
         }
 
         public IEnumerable<RecipeDTO> GetRecipesByIngredient(IEnumerable<string> ingredients)
@@ -243,6 +249,7 @@ namespace RecipeAppBLL.Services
             return matchingRecipes;
         }
 
+       
     }
 }
         
