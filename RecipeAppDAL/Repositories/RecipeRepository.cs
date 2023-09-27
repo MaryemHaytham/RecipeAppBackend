@@ -81,5 +81,18 @@ namespace RecipeAppDAL.Repositories
 
             return matchingRecipes;
         }
+
+        public IEnumerable<Recipe> GetUserRecipes(int id)
+        {
+            var userRecipes = _recipeDbContext.Users
+            .Where(u => u.UserId == id) 
+            .SelectMany(u => u.Recipes) 
+            .ToList();
+
+            return userRecipes;
+
+        }
+
+     
     }
 }

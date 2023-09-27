@@ -11,6 +11,7 @@ using RecipeAppBLL.Utilities.AutoMaper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,8 @@ builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IAddToFavoritesService, AddToFavoritesService>();
+builder.Services.AddScoped<IPlannerService, PlannerService>();
+builder.Services.AddScoped<IPlannerRepository, PlannerRepository>();
 builder.Services.AddControllers();
 
 

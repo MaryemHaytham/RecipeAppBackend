@@ -29,5 +29,6 @@ namespace RecipeAppBLL.Services.IService
         public IEnumerable<Categories> AddCategory(string categoryName);
         public IEnumerable<Categories> GetCategories();
         public IEnumerable<RecipeDTO> GetRecipesByCategory(int categoryID);
+        IEnumerable<RecipeDTO> GetUserRecipes(int id);
     }
 }

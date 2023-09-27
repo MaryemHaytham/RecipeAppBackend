@@ -43,8 +43,7 @@ namespace RecipeAppDAL.Entity
         public List<Review> Reviews { get; set; }// Navigation property
         public List<Rating> Ratings { get; set; }// Navigation property
         public List<RecipeFavorite> FavoritedByUsers { get; set; }
-
-
+        
 
     }
 }
