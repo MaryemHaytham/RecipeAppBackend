@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 
 namespace RecipeAppDAL.Repositories
 {
-    public class PlannerRepository : GenericRepository<MealPlan> ,IPlannerRepository
+    public class PlannerRepository : GenericRepository<Plans> ,IPlannerRepository
     {
         private readonly DataContext.RecipeDbContext _recipeDbContext;
         public PlannerRepository(RecipeDbContext recipeDbContext) : base(recipeDbContext)
         {
             _recipeDbContext = recipeDbContext;
+        }
+
+        public IEnumerable<Plans> GetPlansForUser(int userId)
+        {
+            var mealPlans = _recipeDbContext.Plans
+        .Where(mp => mp.UserId == userId)
+        .ToList();
+
+            return mealPlans;
         }
     }
 }

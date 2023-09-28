@@ -129,6 +129,32 @@ namespace RecipeAppDAL.Migrations
                     b.ToTable("Recipes");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.RecipeAppDAL.Entity.Plans", b =>
+                {
+                    b.Property<int>("MealPlanId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MealPlanId"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RecipeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MealPlanId");
+
+                    b.HasIndex("RecipeId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Plans");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.RecipeFavorite", b =>
                 {
                     b.Property<int>("UserId")
@@ -175,6 +201,53 @@ namespace RecipeAppDAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
+                });
+
+            modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("ShoppingList");
+                });
+
+            modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingListItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPurchased")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ShoppingListId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShoppingListId");
+
+                    b.ToTable("ShoppingListItem");
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>
@@ -244,6 +317,25 @@ namespace RecipeAppDAL.Migrations
                     b.Navigation("category");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.RecipeAppDAL.Entity.Plans", b =>
+                {
+                    b.HasOne("RecipeAppDAL.Entity.Recipe", "Recipe")
+                        .WithMany()
+                        .HasForeignKey("RecipeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("RecipeAppDAL.Entity.User", "User")
+                        .WithMany("MealPlans")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.RecipeFavorite", b =>
                 {
                     b.HasOne("RecipeAppDAL.Entity.Recipe", "Recipe")
@@ -282,6 +374,28 @@ namespace RecipeAppDAL.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingList", b =>
+                {
+                    b.HasOne("RecipeAppDAL.Entity.User", "User")
+                        .WithOne("ShoppingList")
+                        .HasForeignKey("RecipeAppDAL.Entity.ShoppingList", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingListItem", b =>
+                {
+                    b.HasOne("RecipeAppDAL.Entity.ShoppingList", "ShoppingList")
+                        .WithMany("Items")
+                        .HasForeignKey("ShoppingListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShoppingList");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.Categories", b =>
                 {
                     b.Navigation("Recipes");
@@ -296,15 +410,25 @@ namespace RecipeAppDAL.Migrations
                     b.Navigation("Reviews");
                 });
 
+            modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingList", b =>
+                {
+                    b.Navigation("Items");
+                });
+
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>
                 {
                     b.Navigation("FavoriteRecipes");
+
+                    b.Navigation("MealPlans");
 
                     b.Navigation("Ratings");
 
                     b.Navigation("Recipes");
 
                     b.Navigation("Reviews");
+
+                    b.Navigation("ShoppingList")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

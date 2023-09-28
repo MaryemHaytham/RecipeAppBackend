@@ -20,7 +20,10 @@ namespace RecipeAppDAL.Entity
         public List<Recipe> Recipes { get; set; } // Navigation property
         public List<Review> Reviews { get; set; }// Navigation property
         public List<Rating> Ratings { get; set; }// Navigation property
-        public List<MealPlan> MealPlans { get; set; }
+        public List<Plans> MealPlans { get; set; }
+
+        // Reference property to ShoppingList (one-to-one relationship)
+        public ShoppingList ShoppingList { get; set; }
 
 
     }

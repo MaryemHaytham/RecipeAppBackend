@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace RecipeAppDAL.Repositories.IRepositories
 {
-    public interface IPlannerRepository :IGenericRepository<MealPlan>
+    public interface IPlannerRepository : IGenericRepository<Plans>
     {
+        IEnumerable<Plans> GetPlansForUser(int userId);
     }
 }

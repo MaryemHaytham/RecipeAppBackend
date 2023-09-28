@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using RecipeAppDAL.Entity;
+using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 using RecipeAppDAL.Migrations;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,9 @@ namespace RecipeAppDAL.DataContext
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<RecipeFavorite> Favorites { get; set; }
+        public DbSet<Plans> Plans { get; set; }
+        public DbSet<ShoppingList> ShoppingLists { get; set; }
+        public DbSet<ShoppingListItem> shoppingListItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Review>()
@@ -55,6 +59,12 @@ namespace RecipeAppDAL.DataContext
                 .WithMany(u => u.FavoriteRecipes)
                 .HasForeignKey(f => f.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Plans>()
+                .HasOne(mp => mp.User)
+                .WithMany(u => u.MealPlans)
+                .HasForeignKey(mp => mp.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
 
         }

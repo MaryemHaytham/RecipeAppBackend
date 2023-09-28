@@ -21,10 +21,10 @@ namespace RecipeApp.Controllers
         {
             if (await _favoriteService.AddRecipeToFavoritesAsync(addToFavoriteDto))
             {
-                return Ok("Recipe added to favorites successfully.");
+                return Ok(new { message = "Recipe added to favorites successfully." });
             }
 
-            return BadRequest("Failed to add recipe to favorites.");
+            return BadRequest(new { message = "Failed to add recipe to favorites." });
         }
 
         // POST: api/user/removefromfavorites
