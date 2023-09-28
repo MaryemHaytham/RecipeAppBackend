@@ -1,50 +1,90 @@
-﻿using RecipeAppBLL.Services.IService;
+﻿using AutoMapper;
+using RecipeAppBLL.Services.IService;
+using RecipeAppBLL.Utilities.CustomExceptions;
+using RecipeAppBLL.Utilities.Validators.IValidators;
+using RecipeAppDAL.Entity;
 using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 using RecipeAppDAL.Repositories.IRepositories;
+using RecipeAppDTO.MealPlanDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RecipeAppBLL.Services
 {
     public class PlannerService : IPlannerService
     {
         readonly IPlannerRepository _plannerRepository;
-        readonly IRecipeRepository _recipeRepository;
-        public PlannerService(IPlannerRepository plannerRepository) { 
+        readonly IRecipeValidator _recipeValidator;
+        readonly IMapper _mapper;
+        public PlannerService(IPlannerRepository plannerRepository,IRecipeValidator recipeValidator,IMapper mapper) { 
             this._plannerRepository = plannerRepository;
+            this._recipeValidator = recipeValidator;
+            this._mapper = mapper;
         }
-        public MealPlan CreateMealPlan(DateTime date, int userId, int recipeId)
+        public Plans validatePlan(int mealPlanId)
         {
-            var mealPlan = new MealPlan();
+            Plans mealPlan = _plannerRepository.GetById(mealPlanId);
+            if (mealPlan == null)
+            {
+                throw new CustomException("Meal plan not found");
+            }
+            return mealPlan;
+        }
+        public MealPlanDTO CreateMealPlan(string dateString, int userId, int recipeId)
+        {
+            var mealPlan = new Plans();
+            DateTime date = DateTime.Parse(dateString,
+                          System.Globalization.CultureInfo.InvariantCulture);
             mealPlan.Date = date;
             mealPlan.UserId = userId;
             mealPlan.RecipeId = recipeId;
-            mealPlan.Recipe=_recipeRepository.GetById(recipeId);
+            Recipe recipe = _recipeValidator.validateRecipe(recipeId);
+            if(recipe == null)
+            {
+                throw new CustomException("Recipe Not Found");
+            }
+            mealPlan.Recipe=recipe;
             _plannerRepository.Add(mealPlan);
-            return mealPlan;
+
+            return _mapper.Map<MealPlanDTO>(mealPlan);
         }
 
         public void DeleteMealPlan(int mealPlanId)
         {
-            throw new NotImplementedException();
+            Plans mealPlan= validatePlan(mealPlanId);
+            _plannerRepository.Delete(mealPlan);
         }
 
-        public List<MealPlan> GetAllMealPlansForUser(int userId)
+        public IEnumerable<MealPlanDTO> GetAllMealPlansForUser(int userId)
         {
-            throw new NotImplementedException();
+            IEnumerable<Plans> plans= _plannerRepository.GetPlansForUser(userId);
+            return _mapper.Map<IEnumerable<MealPlanDTO>>(plans);
         }
 
-        public MealPlan GetMealPlanById(int mealPlanId)
+        public MealPlanDTO GetMealPlanById(int mealPlanId)
         {
-            throw new NotImplementedException();
+            Plans mealPlan= validatePlan(mealPlanId);
+            MealPlanDTO planDTO= _mapper.Map<MealPlanDTO>(mealPlan);
+            
+            return _mapper.Map<MealPlanDTO>(planDTO);
         }
 
-        public MealPlan UpdateMealPlan(int mealPlanId, DateTime date, int userId, int recipeId)
+        public MealPlanDTO UpdateMealPlan(int mealPlanId, string dateString, int recipeId)
         {
-            throw new NotImplementedException();
+            Recipe recipe = _recipeValidator.validateRecipe(recipeId);
+            Plans mealPlan = validatePlan(mealPlanId);
+            mealPlan.Recipe=recipe;
+            mealPlan.Date =DateTime.Parse(dateString,
+                          System.Globalization.CultureInfo.InvariantCulture);
+            mealPlan.RecipeId=recipeId;
+            _plannerRepository.Update(mealPlan);
+            return _mapper.Map<MealPlanDTO>(mealPlan);
+
+
         }
     }
 }

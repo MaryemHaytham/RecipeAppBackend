@@ -1,4 +1,5 @@
 ﻿using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
+using RecipeAppDTO.MealPlanDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,18 @@ namespace RecipeAppBLL.Services.IService
     public interface IPlannerService
     {
         // Create a new meal plan
-        MealPlan CreateMealPlan(DateTime date, int userId, int recipeId);
+        MealPlanDTO CreateMealPlan(string dateString, int userId, int recipeId);
 
         // Read a meal plan by its ID
-        MealPlan GetMealPlanById(int mealPlanId);
+        MealPlanDTO GetMealPlanById(int mealPlanId);
 
         // Update an existing meal plan
-        MealPlan UpdateMealPlan(int mealPlanId,DateTime date, int userId, int recipeId);
+        MealPlanDTO UpdateMealPlan(int mealPlanId, string dateString, int recipeId);
 
         // Delete a meal plan by its ID
         void DeleteMealPlan(int mealPlanId);
 
         // Get all meal plans for a specific user
-        List<MealPlan> GetAllMealPlansForUser(int userId);
+        IEnumerable<MealPlanDTO> GetAllMealPlansForUser(int userId);
     }
 }

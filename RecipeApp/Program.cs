@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
+using RecipeAppBLL.Utilities.Validators.IValidators;
+using RecipeAppBLL.Utilities.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +34,9 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IAddToFavoritesService, AddToFavoritesService>();
 builder.Services.AddScoped<IPlannerService, PlannerService>();
 builder.Services.AddScoped<IPlannerRepository, PlannerRepository>();
+builder.Services.AddScoped<IRecipeValidator, RecipeValidator>();
+builder.Services.AddScoped<IShoppingListRepository, ShoppingListRepository>();
+builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
 builder.Services.AddControllers();
 
 

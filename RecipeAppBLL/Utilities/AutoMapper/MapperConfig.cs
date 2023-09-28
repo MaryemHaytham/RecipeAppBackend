@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using RecipeAppDAL.Entity;
+using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
+using RecipeAppDTO.MealPlanDTO;
 using RecipeAppDTO.RecipeDTO;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,8 @@ namespace RecipeAppBLL.Utilities.AutoMaper
             CreateMap<RecipeDTO, Recipe>().ReverseMap();
             CreateMap<Review, ReviewDto>().ReverseMap();
             CreateMap<Rating, RatingDto>().ReverseMap();
+            CreateMap<Plans,MealPlanDTO>().ReverseMap();
+            CreateMap<MealPlanDTO, Plans>().ReverseMap();
 
         }
     }
