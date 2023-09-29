@@ -28,9 +28,7 @@ namespace RecipeAppDAL.Entity
         [Required]
         [MinLength(4)] // Enforce minimum length of 1 character
         public string Steps { get; set; }
-
         public string ?Image { get; set; }
-
         public string? DietaryRestrictions { get; set; }
         public DateTime CreatedOn { get; set; }
         public int Popularity { get; set; } = 0;

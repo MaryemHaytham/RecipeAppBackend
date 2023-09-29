@@ -219,7 +219,7 @@ namespace RecipeAppDAL.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("ShoppingList");
+                    b.ToTable("ShoppingLists");
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.ShoppingListItem", b =>
@@ -247,7 +247,7 @@ namespace RecipeAppDAL.Migrations
 
                     b.HasIndex("ShoppingListId");
 
-                    b.ToTable("ShoppingListItem");
+                    b.ToTable("shoppingListItems");
                 });
 
             modelBuilder.Entity("RecipeAppDAL.Entity.User", b =>

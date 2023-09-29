@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecipeAppDAL.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,11 @@ namespace RecipeAppBLL.Services.IService
 {
     public interface IShoppingListService
     {
-      
+        public void GenerateShoppingListFromMealPlans(int userId);
+        public ShoppingList GetShoppingListByUserID(int userId);
+        public void MarkItemAsPurchased(int userId, int itemId);
+        public ShoppingList AddItemToShoppingListManually(int userId, string itemName, string category = null);
+        public IEnumerable<ShoppingListItem> GetItems(int userId);
+
     }
 }

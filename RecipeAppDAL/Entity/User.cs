@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace RecipeAppDAL.Entity
@@ -23,6 +24,7 @@ namespace RecipeAppDAL.Entity
         public List<Plans> MealPlans { get; set; }
 
         // Reference property to ShoppingList (one-to-one relationship)
+        [JsonIgnore]
         public ShoppingList ShoppingList { get; set; }
 
 

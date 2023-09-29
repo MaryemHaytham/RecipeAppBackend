@@ -7,13 +7,14 @@ using RecipeAppBLL.Services;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDAL.Repositories;
-using RecipeAppBLL.Utilities.AutoMaper;
+using RecipeAppBLL.Utilities.AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 using RecipeAppBLL.Utilities.Validators.IValidators;
 using RecipeAppBLL.Utilities.Validators;
+using RecipeAppDAL.Entity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,7 @@ builder.Services.AddScoped<IPlannerRepository, PlannerRepository>();
 builder.Services.AddScoped<IRecipeValidator, RecipeValidator>();
 builder.Services.AddScoped<IShoppingListRepository, ShoppingListRepository>();
 builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
+builder.Services.AddScoped<IGenericRepository<ShoppingListItem>, GenericRepository<ShoppingListItem>>();
 builder.Services.AddControllers();
 
 
@@ -66,6 +68,7 @@ builder.Logging.AddConsole();
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddTransient<ErrorHandlingMiddleware>();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 

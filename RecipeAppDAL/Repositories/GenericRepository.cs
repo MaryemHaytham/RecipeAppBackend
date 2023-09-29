@@ -28,6 +28,7 @@ namespace RecipeAppDAL.Repositories
 
         public void Add(T entity)
         {
+            
             _recipeDbContext.Add(entity);
             _recipeDbContext.SaveChanges();
         }
@@ -52,6 +53,11 @@ namespace RecipeAppDAL.Repositories
         public IQueryable<T> GetQueryable()
         {
             return _recipeDbContext.Set<T>();
+        }
+        public void AddRange(IEnumerable<T> entities)
+        {
+            _recipeDbContext.AddRange(entities);
+            _recipeDbContext.SaveChanges();
         }
     }
 }

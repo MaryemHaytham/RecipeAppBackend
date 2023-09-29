@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace RecipeAppDAL.Entity
 {
@@ -17,6 +18,7 @@ namespace RecipeAppDAL.Entity
 
         public bool IsPurchased { get; set; } = false;
         public int ShoppingListId { get; set; }
+        [JsonIgnore]
         public ShoppingList ShoppingList { get; set; }
         public string? Category { get; set; }
     }
