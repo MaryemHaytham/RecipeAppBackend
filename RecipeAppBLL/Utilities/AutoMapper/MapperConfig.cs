@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecipeAppBLL.Utilities.AutoMaper
+namespace RecipeAppBLL.Utilities.AutoMapper
 {
     public class MapperConfig : Profile
     {
@@ -18,6 +18,7 @@ namespace RecipeAppBLL.Utilities.AutoMaper
             CreateMap<Recipe, AddRecipeDTO>().ReverseMap();
             CreateMap<Recipe, EditRecipeDTO>().ReverseMap();
             CreateMap<RecipeDTO, Recipe>().ReverseMap();
+            CreateMap<Recipe, RecipeDTO>().ReverseMap();
             CreateMap<Review, ReviewDto>().ReverseMap();
             CreateMap<Rating, RatingDto>().ReverseMap();
             CreateMap<Plans,MealPlanDTO>().ReverseMap();

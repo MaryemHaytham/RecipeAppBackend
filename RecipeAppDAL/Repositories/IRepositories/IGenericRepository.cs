@@ -15,5 +15,6 @@ namespace RecipeAppDAL.Repositories.IRepositories
         void Update(T entity);
         void Delete(T entity);
         public IQueryable<T> GetQueryable();
+        public void AddRange(IEnumerable<T> entities);
     }
 }

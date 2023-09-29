@@ -116,7 +116,8 @@ namespace RecipeAppBLL.Services
 
         public IEnumerable<RecipeDTO> SortByRating(List<RecipeDTO> recipes)
         {
-            var sortedRecipes = recipes.OrderByDescending(recipe => recipe.Rating).ToList();
+            IEnumerable<Recipe> recipesToSort = _mapper.Map<IEnumerable<Recipe>>(recipes);
+            var sortedRecipes = recipesToSort.OrderByDescending(recipe => recipe.Rating).ToList();
             return _mapper.Map<IEnumerable<RecipeDTO>>(sortedRecipes);
         }
         public IEnumerable<RecipeDTO> SearchByName(string recipeName)

@@ -64,6 +64,9 @@ namespace RecipeAppDAL.DataContext
                 .WithMany(u => u.MealPlans)
                 .HasForeignKey(mp => mp.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<ShoppingListItem>()
+                .Property(sli => sli.Id)
+                .ValueGeneratedOnAdd();
 
 
 
