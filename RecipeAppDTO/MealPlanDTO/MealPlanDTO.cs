@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace RecipeAppDTO.MealPlanDTO
 
         // Foreign key to Recipe
         public int RecipeId { get; set; }
+        public string MealName { get; set; }
 
     }
 }

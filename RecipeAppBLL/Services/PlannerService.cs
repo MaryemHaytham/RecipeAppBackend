@@ -19,11 +19,13 @@ namespace RecipeAppBLL.Services
     {
         readonly IPlannerRepository _plannerRepository;
         readonly IRecipeValidator _recipeValidator;
+        readonly IRecipeRepository _recipeRepository;
         readonly IMapper _mapper;
-        public PlannerService(IPlannerRepository plannerRepository,IRecipeValidator recipeValidator,IMapper mapper) { 
+        public PlannerService(IPlannerRepository plannerRepository,IRecipeValidator recipeValidator,IMapper mapper,IRecipeRepository recipeRepository) { 
             this._plannerRepository = plannerRepository;
             this._recipeValidator = recipeValidator;
             this._mapper = mapper;
+            this._recipeRepository = recipeRepository;
         }
         public Plans validatePlan(int mealPlanId)
         {
@@ -62,13 +64,21 @@ namespace RecipeAppBLL.Services
         public IEnumerable<MealPlanDTO> GetAllMealPlansForUser(int userId)
         {
             IEnumerable<Plans> plans= _plannerRepository.GetPlansForUser(userId);
-            return _mapper.Map<IEnumerable<MealPlanDTO>>(plans);
+            IEnumerable<MealPlanDTO> plansDTO = _mapper.Map<IEnumerable<MealPlanDTO>>(plans);
+            foreach (MealPlanDTO plan in plansDTO)
+            {
+                Recipe recipe = _recipeRepository.GetById(plan.RecipeId);
+                plan.MealName = recipe.RecipeName;
+            }
+            return plansDTO;
         }
 
         public MealPlanDTO GetMealPlanById(int mealPlanId)
         {
             Plans mealPlan= validatePlan(mealPlanId);
             MealPlanDTO planDTO= _mapper.Map<MealPlanDTO>(mealPlan);
+            Recipe recipe = _recipeRepository.GetById(planDTO.RecipeId);
+            planDTO.MealName = recipe.RecipeName;
             
             return _mapper.Map<MealPlanDTO>(planDTO);
         }
