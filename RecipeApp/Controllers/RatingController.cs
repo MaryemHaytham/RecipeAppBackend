@@ -17,38 +17,48 @@ namespace RecipeApp.Controllers
             _ratingService = ratingService;
         }
 
-        [HttpPost]
+        [HttpPost("CreateRating")]
         public async Task<IActionResult> CreateRating(RatingDto ratingDto)
         {
-            var rating = new Rating
-            {
-                Value = ratingDto.Value,
-                // Set other properties as needed
-            };
+            var createdRating = await _ratingService.CreateRatingAsync(ratingDto);
 
-            var createdRating = await _ratingService.CreateRatingAsync(rating);
-            var createdRatingDto = new RatingDto
-            {
-                Value = createdRating.Value,
-                // Map other properties if needed
-            };
-
-            return CreatedAtAction(nameof(Rating), new { id = createdRating.RatingId }, createdRatingDto);
+            return Ok(ratingDto);
         }
 
-        [HttpGet("{recipeId}")]
+        [HttpGet("{ratingId}")]
+        public async Task<IActionResult> GetRating(int ratingId)
+        {
+            var rating = await _ratingService.GetRatingByIdAsync(ratingId);
+            if (rating == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(rating);
+        }
+
+        [HttpGet("GetRatingsForRecipe/{recipeId}")]
         public async Task<IActionResult> GetRatingsForRecipe(int recipeId)
         {
             var ratings = await _ratingService.GetRatingsForRecipeAsync(recipeId);
-            var ratingDtos = ratings.Select(r => new RatingDto
-            {
-                Value = r.Value,
-                // Map other properties if needed
-            }).ToList();
 
-            return Ok(ratingDtos);
+            return Ok(ratings);
         }
 
+        [HttpPut("{ratingId}")]
+        public async Task<IActionResult> UpdateRating(int ratingId, RatingDto ratingDto)
+        {
+            await _ratingService.UpdateRatingAsync(ratingId, ratingDto);
 
+            return NoContent();
+        }
+
+        [HttpDelete("{ratingId}")]
+        public async Task<IActionResult> DeleteRating(int ratingId)
+        {
+            await _ratingService.DeleteRatingAsync(ratingId);
+
+            return NoContent();
+        }
     }
 }

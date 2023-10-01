@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Entity;
+using RecipeAppDTO.RecipeDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,37 +16,42 @@ namespace RecipeAppBLL.Services
     public class RatingService : IRatingService
     {
         private readonly RecipeDbContext _context;
-        private readonly ILogger<RecipeService> _logger;
         private readonly IMapper _mapper;
 
-        public RatingService(RecipeDbContext context, ILogger<RecipeService> logger, IMapper mapper)
+        public RatingService(RecipeDbContext context, IMapper mapper)
         {
             _context = context;
-            _logger = logger;
             _mapper = mapper;
         }
 
-        public async Task<Rating> CreateRatingAsync(Rating rating)
+        public async Task<Rating> CreateRatingAsync(RatingDto ratingDto)
         {
+            var rating = _mapper.Map<RatingDto, Rating>(ratingDto);
             _context.Ratings.Add(rating);
             await _context.SaveChangesAsync();
             return rating;
         }
 
-        public async Task<Rating> GetRatingByIdAsync(int Id)
+        public async Task<Rating> GetRatingByIdAsync(int ratingId)
         {
-            return await _context.Ratings.FindAsync(Id);
+            return await _context.Ratings.FindAsync(ratingId);
         }
 
         public async Task<List<Rating>> GetRatingsForRecipeAsync(int recipeId)
         {
-            return await _context.Ratings.Where(r => r.Id == recipeId).ToListAsync();
+            return await _context.Ratings.Where(r => r.RecipeId == recipeId).ToListAsync();
         }
 
-        public async Task UpdateRatingAsync(Rating rating)
+        public async Task UpdateRatingAsync(int ratingId, RatingDto ratingDto)
         {
-            _context.Entry(rating).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            var existingRating = await _context.Ratings.FindAsync(ratingId);
+            if (existingRating != null)
+            {
+                // Update rating properties from ratingDto
+                existingRating.Value = ratingDto.Value;
+
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteRatingAsync(int ratingId)
@@ -58,4 +64,5 @@ namespace RecipeAppBLL.Services
             }
         }
     }
+
 }

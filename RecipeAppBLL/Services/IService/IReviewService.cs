@@ -10,10 +10,10 @@ namespace RecipeAppBLL.Services.IService
 {
     public interface IReviewService
     {
-        Task<Review> CreateReviewAsync(Review review);
+        Task<Review> CreateReviewAsync(ReviewDto reviewDto);
         Task<Review> GetReviewByIdAsync(int reviewId);
         Task<List<Review>> GetReviewsForRecipeAsync(int recipeId);
-        Task UpdateReviewAsync(Review review);
+        Task UpdateReviewAsync(int reviewId, ReviewDto reviewDto);
         Task DeleteReviewAsync(int reviewId);
     }
 }

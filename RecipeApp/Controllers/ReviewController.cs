@@ -17,38 +17,50 @@ namespace RecipeApp.Controllers
         {
             _reviewService = reviewService;
         }
+
         [HttpPost("CreateReview")]
         public async Task<IActionResult> CreateReview(ReviewDto reviewDto)
         {
-            var review = new Review
-            {
-                Text = reviewDto.Text,
-                // Set other properties as needed
-            };
+            var createdReview = await _reviewService.CreateReviewAsync(reviewDto);
 
-            var createdReview = await _reviewService.CreateReviewAsync(review);
-            var createdReviewDto = new ReviewDto
-            {
-                Text = createdReview.Text,
-                // Map other properties if needed
-            };
-
-            return CreatedAtAction(nameof(Review), new { id = createdReview.ReviewId }, createdReviewDto);
+            return Ok(reviewDto);
         }
 
-        [HttpGet("{recipeId}")]
+        [HttpGet("{reviewId}")]
+        public async Task<IActionResult> GetReview(int reviewId)
+        {
+            var review = await _reviewService.GetReviewByIdAsync(reviewId);
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(review);
+        }
+
+        [HttpGet("GetReviewsForRecipe/{recipeId}")]
         public async Task<IActionResult> GetReviewsForRecipe(int recipeId)
         {
             var reviews = await _reviewService.GetReviewsForRecipeAsync(recipeId);
-            var reviewDtos = reviews.Select(r => new ReviewDto
-            {
-                Text = r.Text,
-                // Map other properties if needed
-            }).ToList();
 
-            return Ok(reviewDtos);
+            return Ok(reviews);
         }
 
+        [HttpPut("{reviewId}")]
+        public async Task<IActionResult> UpdateReview(int reviewId, ReviewDto reviewDto)
+        {
+            await _reviewService.UpdateReviewAsync(reviewId, reviewDto);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{reviewId}")]
+        public async Task<IActionResult> DeleteReview(int reviewId)
+        {
+            await _reviewService.DeleteReviewAsync(reviewId);
+
+            return NoContent();
+        }
     }
 
 

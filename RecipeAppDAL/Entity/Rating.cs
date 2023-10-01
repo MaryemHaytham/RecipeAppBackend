@@ -20,7 +20,7 @@ namespace RecipeAppDAL.Entity
         public int UserId { get; set; } // Foreign key to User
         public User User { get; set; } // Navigation property to User
 
-        public int Id { get; set; } // Foreign key to Recipe
+        public int RecipeId { get; set; } // Foreign key to Recipe
         public Recipe Recipe { get; set; } // Navigation property to Recipe
     }
 }
