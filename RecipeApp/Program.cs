@@ -15,6 +15,7 @@ using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 using RecipeAppBLL.Utilities.Validators.IValidators;
 using RecipeAppBLL.Utilities.Validators;
 using RecipeAppDAL.Entity;
+using RecipeAppBLL.SignalR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -70,6 +71,8 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 builder.Services.AddTransient<ErrorHandlingMiddleware>();
 builder.Services.AddSignalR();
 
+builder.Services.AddHostedService<ServerNotifier>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -104,5 +107,5 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 // Serve static files from the wwwroot directory
 app.UseStaticFiles();
 
-
+app.MapHub<NotificationsHub>("Notifications");
 app.Run();
