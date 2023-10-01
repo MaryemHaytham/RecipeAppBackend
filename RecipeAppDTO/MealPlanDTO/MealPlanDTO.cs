@@ -20,6 +20,7 @@ namespace RecipeAppDTO.MealPlanDTO
 
         // Foreign key to Recipe
         public int RecipeId { get; set; }
+        public string MealName { get; set;}
 
     }
 }
