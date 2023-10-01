@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Entity;
+using RecipeAppDTO.RecipeDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,18 +16,17 @@ namespace RecipeAppBLL.Services
     public class ReviewService : IReviewService
     {
         private readonly RecipeDbContext _context;
-        private readonly ILogger<RecipeService> _logger;
         private readonly IMapper _mapper;
 
-        public ReviewService(RecipeDbContext context, ILogger<RecipeService> logger, IMapper mapper)
+        public ReviewService(RecipeDbContext context, IMapper mapper)
         {
             _context = context;
-            _logger = logger;
             _mapper = mapper;
         }
 
-        public async Task<Review> CreateReviewAsync(Review review)
+        public async Task<Review> CreateReviewAsync(ReviewDto reviewDto)
         {
+            var review = _mapper.Map<ReviewDto, Review>(reviewDto);
             _context.Reviews.Add(review);
             await _context.SaveChangesAsync();
             return review;
@@ -39,13 +39,19 @@ namespace RecipeAppBLL.Services
 
         public async Task<List<Review>> GetReviewsForRecipeAsync(int recipeId)
         {
-            return await _context.Reviews.Where(r => r.Id == recipeId).ToListAsync();
+            return await _context.Reviews.Where(r => r.RecipeId == recipeId).ToListAsync();
         }
 
-        public async Task UpdateReviewAsync(Review review)
+        public async Task UpdateReviewAsync(int reviewId, ReviewDto reviewDto)
         {
-            _context.Entry(review).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            var existingReview = await _context.Reviews.FindAsync(reviewId);
+            if (existingReview != null)
+            {
+                // Update review properties from reviewDto
+                existingReview.Text = reviewDto.Text;
+
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task DeleteReviewAsync(int reviewId)
@@ -58,5 +64,6 @@ namespace RecipeAppBLL.Services
             }
         }
     }
+
 
 }

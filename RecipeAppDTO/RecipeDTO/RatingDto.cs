@@ -9,5 +9,7 @@ namespace RecipeAppDTO.RecipeDTO
     public class RatingDto
     {
         public int Value { get; set; }
+        public int UserId { get; set; }
+        public int RecipeId { get; set; }
     }
 }
