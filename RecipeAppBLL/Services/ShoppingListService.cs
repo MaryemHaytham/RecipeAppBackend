@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client;
+﻿using AutoMapper;
+using Microsoft.Identity.Client;
 using RecipeAppBLL.Services.IService;
 using RecipeAppBLL.Utilities.CustomExceptions;
 using RecipeAppDAL.Entity;
@@ -6,6 +7,7 @@ using RecipeAppDAL.Entity.RecipeAppDAL.Entity;
 using RecipeAppDAL.Migrations;
 using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDTO.MealPlanDTO;
+using RecipeAppDTO.ShoppingListDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +23,14 @@ namespace RecipeAppBLL.Services
         readonly IGenericRepository<ShoppingListItem> _genericRepository;
         readonly IPlannerRepository _plannerRepository;
         readonly IRecipeRepository _recipeRepository;
-        public ShoppingListService(IShoppingListRepository shoppingListRepository, IGenericRepository<ShoppingListItem> genericRepository, IUserRepository userRepository,IPlannerRepository plannerRepository,IRecipeRepository recipeRepository) { 
+        readonly IMapper _mapper;
+        public ShoppingListService(IShoppingListRepository shoppingListRepository, IGenericRepository<ShoppingListItem> genericRepository, IUserRepository userRepository,IPlannerRepository plannerRepository,IRecipeRepository recipeRepository, IMapper mapper) { 
             this._shoppingListRepository = shoppingListRepository;
             this._genericRepository = genericRepository;
             this._userRepository = userRepository;
             this._plannerRepository = plannerRepository;
             this._recipeRepository = recipeRepository;
+            this._mapper = mapper;
         }
         // Fetches a user by ID and throws an exception if the user doesn't exist.
         private User GetUserById(int userId)
@@ -137,7 +141,7 @@ namespace RecipeAppBLL.Services
             return shoppingList.Items;
         }
 
-        public ShoppingList GetShoppingListByUserID(int userId)
+        public ShoppingListDTO GetShoppingListByUserID(int userId)
         {
             User user = _userRepository.GetById(userId);
             if(user == null)
@@ -146,7 +150,7 @@ namespace RecipeAppBLL.Services
             }
             ShoppingList shoppingList = _shoppingListRepository.GetShoppingListByUserID(userId);
             
-            return shoppingList;
+            return _mapper.Map<ShoppingListDTO>(shoppingList);
         }
 
         public void MarkItemAsPurchased(int userId, int itemId)

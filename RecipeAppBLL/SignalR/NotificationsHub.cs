@@ -9,16 +9,22 @@ namespace RecipeAppBLL.SignalR
 {
     public class NotificationsHub :Hub<INotificationsClient>
     {
-        public override async Task OnConnectedAsync()
+        /*public override async Task OnConnectedAsync()
         {
             Clients.Client(Context.ConnectionId).RecieveNotification($"Thank you for connecting {Context.User?.Identity?.Name}");
 
             await base.OnConnectedAsync();
+        }*/
+        public async Task SendNotificationToUser(string userId, string message)
+        {
+            await Clients.User(userId).SendNotificationToUser(message);
         }
+
+
     }
 
     public interface INotificationsClient
     {
-        Task RecieveNotification(string message);
+        Task SendNotificationToUser(string message);
     }
 }

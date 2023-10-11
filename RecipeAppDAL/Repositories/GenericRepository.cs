@@ -6,6 +6,7 @@ using RecipeAppDAL.Repositories.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -58,6 +59,17 @@ namespace RecipeAppDAL.Repositories
         {
             _recipeDbContext.AddRange(entities);
             _recipeDbContext.SaveChanges();
+        }
+        public IQueryable<T> Get(Expression<Func<T, bool>> whereCondition, params Expression<Func<T, object>>[] includes)
+        {
+            IQueryable<T> query = _recipeDbContext.Set<T>();
+
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return query;
         }
     }
 }

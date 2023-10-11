@@ -32,7 +32,7 @@ namespace RecipeAppBLL.SignalR
                 var dateTime = DateTime.Now;
                 _logger.LogInformation("Executing {Service} {Time} ", nameof(ServerNotifier), dateTime);
 
-                await _context.Clients.All.RecieveNotification($"Server time = {dateTime}");
+                //await _context.Clients.All.RecieveNotification($"Server time = {dateTime}");
 
 
             }

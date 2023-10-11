@@ -21,7 +21,6 @@ namespace RecipeApp.Controllers
         {
            
             var shoppingList = _shoppingListService.GetShoppingListByUserID(userId);
-            if(shoppingList == null) return NotFound("Not Found");
             return Ok(shoppingList);
            
         }
@@ -29,9 +28,9 @@ namespace RecipeApp.Controllers
         [HttpPost("GenerateShoppingList/{userId}")]
         public IActionResult GenerateShoppingList(int userId)
         {
-           
+
             _shoppingListService.GenerateShoppingListFromMealPlans(userId);
-            return Ok("Shopping list generated successfully.");
+            return Ok(new {Message = "Shopping list generated successfully."});
             
         }
 

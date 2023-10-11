@@ -15,6 +15,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR;
+using RecipeAppBLL.SignalR;
 
 namespace RecipeAppBLL.Services
 {
@@ -26,13 +28,15 @@ namespace RecipeAppBLL.Services
         private readonly ICategoriesRepository _categoriesRepository;
         private readonly IMapper _mapper;
         private ISearch _searchStrategy;
-        public RecipeService(IRecipeRepository recipeRepository, ILogger<RecipeService> logger, IMapper mapper, IUserRepository userRepository, ICategoriesRepository categoriesRepository)
+        private readonly IHubContext<NotificationsHub, INotificationsClient> _hubContext;
+        public RecipeService(IRecipeRepository recipeRepository, ILogger<RecipeService> logger, IMapper mapper, IUserRepository userRepository, ICategoriesRepository categoriesRepository ,IHubContext<NotificationsHub, INotificationsClient> hubContext)
         {
             _recipeRepository = recipeRepository;
             _logger = logger;
             _mapper = mapper;
             _userRepository = userRepository;
             _categoriesRepository = categoriesRepository;
+            _hubContext = hubContext;
         }
 
         public RecipeDTO AddRecipe(AddRecipeDTO recipeDTO)
@@ -41,7 +45,8 @@ namespace RecipeAppBLL.Services
             {
                 throw new ArgumentNullException(nameof(recipeDTO), "Recipe is empty.");
             }
-            if (_userRepository.GetById(recipeDTO.UserId) == null)
+            User user = _userRepository.GetById(recipeDTO.UserId);
+            if (user == null)
             {
                 throw new CustomException("Invalid User");
             }
@@ -57,6 +62,11 @@ namespace RecipeAppBLL.Services
 
             _recipeRepository.Add(recipe);
             _recipeRepository.AddIngredients(recipe.Ingredients);
+
+            var userIdToNotify = user.UserId;
+
+            // Send a notification to the specific user
+            _hubContext.Clients.User(userIdToNotify.ToString()).SendNotificationToUser("here");
             return getRecipeToReturnDTO(recipe);
         }
         public void UpdateRecipe(EditRecipeDTO recipeDTO, int recipeID)
@@ -107,12 +117,12 @@ namespace RecipeAppBLL.Services
             return _mapper.Map<RecipeDTO>(recipe);
         }
 
-        public RecipeDTO GetByIdDTO(int recipeID)
+        public RecipeWithReviewsDTO GetByIdDTO(int recipeID)
         {
             Recipe recipe = GetByID(recipeID);
-            return _mapper.Map<RecipeDTO>(recipe);
+            //Recipe recipe = _recipeRepository.Get(r => r.Id == recipeID, r => r.Reviews).FirstOrDefault();
+            return _mapper.Map<RecipeWithReviewsDTO>(recipe);
         }
-
 
         public IEnumerable<RecipeDTO> SortByRating(List<RecipeDTO> recipes)
         {
@@ -224,6 +234,7 @@ namespace RecipeAppBLL.Services
             _categoriesRepository.Add(category);
             return _categoriesRepository.GetAll();
         }
+
         public IEnumerable<Categories> GetCategories()
         {
             return _categoriesRepository.GetAll();
