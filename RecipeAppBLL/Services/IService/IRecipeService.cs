@@ -19,7 +19,7 @@ namespace RecipeAppBLL.Services.IService
 
         void UpdateRecipe(EditRecipeDTO recipe, int recipeID);
         object GetUniqueIngredients();
-        public RecipeDTO GetByIdDTO(int recipeID);
+        public RecipeWithReviewsDTO GetByIdDTO(int recipeID);
         public Recipe GetByID(int recipeID);
         public IEnumerable<RecipeDTO> GetAllRecipes();
         public void DeleteImage(int id, string webRootPath);

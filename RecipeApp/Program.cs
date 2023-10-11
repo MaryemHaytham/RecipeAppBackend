@@ -1,4 +1,3 @@
-
 using Microsoft.Extensions.FileProviders;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +39,8 @@ builder.Services.AddScoped<IRecipeValidator, RecipeValidator>();
 builder.Services.AddScoped<IShoppingListRepository, ShoppingListRepository>();
 builder.Services.AddScoped<IShoppingListService, ShoppingListService>();
 builder.Services.AddScoped<IGenericRepository<ShoppingListItem>, GenericRepository<ShoppingListItem>>();
+builder.Services.AddScoped<IGenericRepository<Review>, GenericRepository<Review>>();
+
 builder.Services.AddControllers();
 
 
@@ -107,5 +108,5 @@ app.UseMiddleware<ErrorHandlingMiddleware>();
 // Serve static files from the wwwroot directory
 app.UseStaticFiles();
 
-app.MapHub<NotificationsHub>("Notifications");
+app.MapHub<NotificationsHub>("/Notifications");
 app.Run();

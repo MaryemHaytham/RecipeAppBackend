@@ -6,6 +6,7 @@ using RecipeAppDAL.Repositories.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,9 +21,10 @@ namespace RecipeAppDAL.Repositories
 
         public ShoppingList GetShoppingListByUserID(int userId)
         {
-            return _recipeDbContext.ShoppingLists
-                .Include(sl => sl.Items) 
-                .FirstOrDefault(sl => sl.UserId == userId);
+            Expression<Func<ShoppingList, bool>> filter = sl => sl.UserId == userId;
+            Expression<Func<ShoppingList, object>>[] includes = { sl => sl.Items };
+
+            return Get(filter, includes).FirstOrDefault();
         }
     }
 }

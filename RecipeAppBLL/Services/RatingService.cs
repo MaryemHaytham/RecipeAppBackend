@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using RecipeAppBLL.Services.IService;
 using RecipeAppDAL.DataContext;
 using RecipeAppDAL.Entity;
+using RecipeAppDAL.Repositories;
+using RecipeAppDAL.Repositories.IRepositories;
 using RecipeAppDTO.RecipeDTO;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,7 @@ namespace RecipeAppBLL.Services
         {
             _context = context;
             _mapper = mapper;
+          
         }
 
         public async Task<Rating> CreateRatingAsync(RatingDto ratingDto)
